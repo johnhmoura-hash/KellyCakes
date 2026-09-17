@@ -1,31 +1,280 @@
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Playfair+Display:ital,wght@0,700;1,700&display=swap');
-:root { --cream:#fff6f1; --pink:#c94861; --wine:#b72e4a; --brown:#70412b; --sand:#b89b8b; }
-* { box-sizing:border-box; }
-body { margin:0; color:var(--brown); background:var(--cream); font-family:'DM Sans',Arial,sans-serif; }
-.container-header { min-height:66px; display:flex; align-items:center; justify-content:space-between; gap:32px; padding:8px clamp(24px,10vw,160px); background:#fde0e3; }
-.logo2 img { display:block; width:74px; height:auto; }
-.menu { display:flex; align-items:center; gap:clamp(16px,2.2vw,34px); }
-.menu a { color:#4d2916; font-size:12px; text-decoration:none; white-space:nowrap; }
-.menu a:hover { color:var(--pink); }
-.menu div:last-of-type a { display:inline-block; padding:5px 20px; color:white; font-weight:700; background:var(--pink); border-radius:20px; }
-.hero { min-height:270px; padding:38px clamp(24px,11vw,180px); background-color:#fff0ef; background-image:radial-gradient(#f8d3d6 2px,transparent 2.5px),radial-gradient(#f7dce0 7px,transparent 8px); background-size:34px 34px,105px 105px; background-position:0 0,17px 27px; }
-.hero h1,.montar h2 { margin:0; text-transform:uppercase; line-height:1.1; }
-.hero h1 { max-width:360px; color:#8c6756; font-size:clamp(28px,3vw,42px); }
-.hero h1 em { color:var(--pink); font-family:'Playfair Display',serif; }
-.hero-actions { display:flex; gap:24px; margin-top:28px; }
-.button { padding:11px 19px; border:1px solid var(--pink); border-radius:8px; color:var(--pink); background:#fff9f7; font:700 13px 'DM Sans',sans-serif; text-decoration:none; }
-.button.primary { color:white; background:var(--pink); }
-.about { padding:38px clamp(24px,11vw,180px) 68px; background:#ffe8e8; }
-.about h2 { margin:0 0 -2px; font-weight:500; font-size:28px; text-decoration:underline; }
-.about-grid { display:grid; grid-template-columns:1.1fr 1.2fr; max-width:860px; }
-.about-copy { padding:16px 26px 30px; color:white; background:var(--wine); font-size:19px; line-height:1.12; font-weight:700; }
-.features { display:grid; align-content:center; gap:25px; padding:35px 44px; }
-.feature { display:grid; grid-template-columns:35px 1fr; align-items:center; gap:12px; font-size:14px; line-height:1.1; }
-.feature span { font-size:28px; }
-.montar { min-height:390px; display:grid; grid-template-columns:1fr 1fr; align-items:center; padding:20px clamp(24px,11vw,180px); color:#fff6f1; background:var(--sand); }
-.montar-copy { max-width:290px; text-align:center; }
-.montar h2 { font-size:clamp(32px,4vw,51px); }
-.montar p { font-size:13px; line-height:1.2; }
-.cake-photo { width:min(100%,390px); aspect-ratio:1.25; display:grid; place-items:center; background:linear-gradient(120deg,rgba(121,52,47,.66),rgba(249,204,188,.43)),url('../img/logoHeader.png') center/45% no-repeat,#9b6b5b; }
-.cake-photo::after { content:'Bolo feito com amor'; font-family:'Playfair Display',serif; font-size:25px; opacity:.8; }
-@media (max-width:680px) { .container-header { padding:10px 20px; gap:12px; } .menu { gap:10px; } .menu a { font-size:10px; } .menu div:nth-child(-n+2),.menu span { display:none; } .hero,.about { padding-left:28px; padding-right:28px; } .about-grid,.montar { grid-template-columns:1fr; } .features { padding:30px 8px 0; } .montar { justify-items:center; gap:20px; padding-top:45px; padding-bottom:45px; } }
+
+:root {
+    --cream: #fff6f1;
+    --pink: #c94861;
+    --wine: #b72e4a;
+    --brown: #70412b;
+    --sand: #b89b8b;
+    --content-width: 1200px;
+    --page-gutter: max(24px, calc((100vw - var(--content-width)) / 2));
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    color: var(--brown);
+    background: var(--cream);
+    font-family: 'DM Sans', Arial, sans-serif;
+}
+ 
+header {
+    background: #fde0e3;
+}
+
+.container-header {
+    width: min(calc(100% - 48px), var(--content-width));
+    margin: 0 auto;
+    min-height: 66px;
+    height: 1px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 32px;
+    padding: 8px 0;
+}
+
+.logo2 img {
+    display: block;
+    width: 74px;
+    height: auto;
+}
+
+.menu {
+    display: flex;
+    align-items: center;
+    gap: clamp(16px, 2.2vw, 34px);
+}
+
+.menu a {
+    color: #4d2916;
+    font-size: 12px;
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+.menu a:hover {
+    color: var(--pink);
+}
+
+.menu div:last-of-type a {
+    display: inline-block;
+    padding: 5px 20px;
+    color: white;
+    font-weight: 700;
+    background: var(--pink);
+    border-radius: 20px;
+}
+
+.menu a.carrinho {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #FDC3CB;
+    text-decoration: none;
+}
+
+.menu a.carrinho i {
+    font-size: 25px;
+    color: var(--pink);
+    line-height: 1;
+}
+
+.menu a.carrinho:hover i {
+    color: #FDC3CB;
+}
+
+.hero {
+    min-height: 270px;
+    padding: 38px var(--page-gutter);
+    background-color: #fff0ef;
+    background-image: radial-gradient(#f8d3d6 2px, transparent 2.5px), radial-gradient(#f7dce0 7px, transparent 8px);
+    background-size: 34px 34px, 105px 105px;
+    background-position: 0 0, 17px 27px;
+    position: relative;
+}
+
+.hero h1,
+.montar h2 {
+    margin: 0;
+    text-transform: uppercase;
+    line-height: 1.1;
+}
+
+.hero h1 {
+    max-width: 360px;
+    color: #8c6756;
+    
+}
+
+.hero h1 em {
+    color: var(--pink);
+    font-family: montserrat;
+}
+
+.hero-actions {
+    display: flex;
+    gap: 24px;
+    margin-top: 28px;
+}
+
+.button {
+    padding: 11px 19px;
+    border: 1px solid var(--pink);
+    border-radius: 8px;
+    color: var(--pink);
+    background: #fff9f7;
+    font: 700 13px 'DM Sans', sans-serif;
+    text-decoration: none;
+}
+
+.button {
+    transition: transform 0.2s ease;
+}
+.button:hover{
+    transform: scale(1.08);
+}
+
+.button.primary {
+    color: white;
+    background: var(--pink);
+}
+
+.about {
+   padding: 20px var(--page-gutter) 60px;
+    background: #ffe8e8;
+    
+}
+
+.about h2 {
+    margin: -25px 0 20px;
+    position: relative;
+    z-index: 2;
+
+    font-weight: 500;
+    font-size: clamp(28px, 2.2vw, 36px);
+}
+
+.about-grid {
+    width: 100%;
+    display: grid;
+    grid-template-columns: minmax(280px, 1fr) minmax(300px, 1fr);
+    gap: clamp(30px, 5vw, 80px);
+}
+
+.about-copy {
+    padding: 16px 26px 40px;
+    color: #FFF7F2;
+    background: var(--wine);
+    font-size: 25px;
+    line-height: 1.12;
+    font-weight: 500;
+}
+
+.features {
+    display: grid;
+    align-content: center;
+    gap: 25px;
+    padding: 35px 44px;
+}
+
+.features img{
+   width: 60px;
+}
+
+.feature {
+    display: grid;
+    grid-template-columns: 35px 1fr;
+    align-items: center;
+    gap: 20px;
+    font-size: 20px;
+    line-height: 1.1;
+}
+
+.feature span {
+    font-size: 28px;
+}
+
+.montar {
+    min-height: 390px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    padding: 20px var(--page-gutter);
+    color: #fff6f1;
+    background: var(--sand);
+}
+
+.montar-copy {
+    max-width: 290px;
+    text-align: center;
+}
+
+.montar h2 {
+    font-size: clamp(32px, 4vw, 51px);
+}
+
+.montar p {
+    font-size: 13px;
+    line-height: 1.2;
+}
+
+.cake-photo {
+    width: min(100%, 390px);
+    aspect-ratio: 1.25;
+    display: grid;
+    place-items: center;
+    background: linear-gradient(120deg, rgba(121, 52, 47, .66), rgba(249, 204, 188, .43)), url('../img/logoHeader.png') center/45% no-repeat, #9b6b5b;
+}
+
+.cake-photo::after {
+    content: 'Bolo feito com amor';
+    font-family: 'Playfair Display', serif;
+    font-size: 25px;
+    opacity: .8;
+}
+
+@media (max-width:680px) {
+    .container-header {
+        padding: 10px 20px;
+        gap: 12px;
+    }
+
+    .menu {
+        gap: 10px;
+    }
+
+    .menu a {
+        font-size: 10px;
+    }
+
+    .menu div:nth-child(-n+2),
+    .menu span {
+        display: none;
+    }
+
+    .hero,
+    .about {
+        padding-left: 28px;
+        padding-right: 28px;
+    }
+
+    .about-grid,
+    .montar {
+        grid-template-columns: 1fr;
+    }
+
+    .features {
+        padding: 30px 8px 0;
+    }
+
+    .montar {
+        justify-items: center;
+        gap: 20px;
+        padding-top: 45px;
+        padding-bottom: 45px;
+    }
+}
