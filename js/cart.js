@@ -11,6 +11,7 @@
       <div class="kc-cart-heading"><h2>Seu carrinho</h2><button class="kc-cart-close" type="button" aria-label="Fechar carrinho">×</button></div>
       <div class="kc-cart-items"></div>
       <div class="kc-cart-total"><span>Total</span><strong>R$ 0,00</strong></div>
+      <a class="kc-order-history" href="historicoPedidos.html" hidden>Ver histórico de pedidos</a>
       <button class="kc-checkout" type="button">Finalizar pedido</button>
     </aside>`);
 
@@ -19,6 +20,17 @@
   const itemArea = document.querySelector('.kc-cart-items');
   const total = document.querySelector('.kc-cart-total strong');
   const checkout = document.querySelector('.kc-checkout');
+  const orderHistory = document.querySelector('.kc-order-history');
+  document.addEventListener('click', (event) => {
+    if (!event.target.closest('.kc-checkout')) return;
+    event.stopImmediatePropagation();
+    if (!window.KellyAuth?.getUser()) {
+      alert('Para finalizar seu pedido, você precisa entrar ou criar uma conta.');
+      location.href = 'login.html?next=confirmarBolo.html';
+      return;
+    }
+    location.href = 'confirmarBolo.html';
+  }, true);
   const close = () => { drawer.classList.remove('is-open'); backdrop.classList.remove('is-open'); drawer.setAttribute('aria-hidden', 'true'); };
   const open = () => { render(); drawer.classList.add('is-open'); backdrop.classList.add('is-open'); drawer.setAttribute('aria-hidden', 'false'); };
 
@@ -30,6 +42,7 @@
     }).join('') : '<p class="kc-cart-empty">Seu carrinho ainda está vazio.</p>';
     total.textContent = currency(items.reduce((sum, item) => sum + Number(item.price), 0));
     checkout.disabled = !items.length;
+    orderHistory.hidden = !window.KellyAuth?.getUser();
   }
 
   itemArea.addEventListener('click', (event) => {

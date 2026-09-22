@@ -13,6 +13,7 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
   <link rel="stylesheet" href="css/montarBolo.css">
   <link rel="stylesheet" href="css/cart.css">
+  <script src="js/auth.js" defer></script>
   <script src="js/cart.js" defer></script>
 </head>
 
@@ -24,7 +25,7 @@
         <a href="portfolio.html#sabores">Como montar?</a>
         <a href="portfolio.html#pedido">Como pedir</a>
         <a href="portfolio.html#contato">Contato</a>
-        <a href="portfolio.html">Catálogo</a>
+        <a href="catalogo.html">Catálogo</a>
 
         <a class="mb-cart" href="carrinho.html" aria-label="Carrinho"><i class="bi bi-cart"></i></a>
       </nav>
@@ -219,6 +220,20 @@
     }
 
     floorOptions.forEach((option) => option.addEventListener('change', updateAvailableFloors));
+
+    const modelo = new URLSearchParams(location.search).get('modelo');
+    const modelos = {
+      vintage: { andares: '2', cobertura: 'Buttercream', decoracao: 'Vintage' },
+      flores: { andares: '1', cobertura: 'Chantininho', decoracao: 'Flores' },
+      minimalista: { andares: '1', cobertura: 'Ganache', decoracao: 'Minimalista' }
+    };
+    if (modelos[modelo]) {
+      Object.entries(modelos[modelo]).forEach(([name, value]) => {
+        const field = document.querySelector(`[name="${name}"][value="${value}"]`);
+        if (field) field.checked = true;
+      });
+      updateAvailableFloors();
+    }
 
     const photoInput = document.querySelector('#foto-modelo');
     const photoData = document.querySelector('#foto-modelo-dados');

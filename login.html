@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Entrar | Kelly Cakes</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/pages.css">
+    <script src="js/auth.js" defer></script>
+    <script src="js/login.js" defer></script>
+</head>
+
+<body class="kc-page">
+    <main class="kc-page-main"><a href="portfolio.html">← Voltar para a loja</a>
+        <h1>Que bom ter você aqui</h1>
+        <p class="kc-intro">Entre para finalizar seu pedido e acompanhar suas encomendas.</p>
+        <form id="login-form" class="kc-auth-card">
+            <p id="auth-message" class="kc-message" aria-live="polite"></p><label>E-mail<input name="email" type="email"
+                    required autocomplete="email"></label><label>Senha<input name="password" type="password" required
+                    autocomplete="current-password"></label><button class="kc-primary">Entrar</button>
+            <p class="kc-auth-switch">Não possui cadastro? <a id="register-link" href="cadastro.html">Cadastre-se</a>
+            </p>
+        </form>
+    </main>
+    <script>document.querySelector('#register-link').href = `cadastro.html${location.search}`;</script>
+</body>
+
+</html>

@@ -1036,6 +1036,15 @@ select:focus {
     transform: translateY(-2px);
 }
 
+.payment-extra { margin-top: 16px; }
+.payment-detail { padding: 22px 30px; border: 1px solid #e7b9c0; background: #fffafa; }
+.payment-detail h3 { margin: 0 0 14px; color: var(--brown); font-size: 16px; }
+.payment-detail p { margin: 0; color: #9b7666; font-size: 13px; }
+.payment-detail label { display: grid; gap: 6px; margin: 12px 0; color: #70412b; font-size: 13px; font-weight: 600; }
+.payment-detail input, .payment-detail select { width: 100%; padding: 10px; border: 1px solid #dfadb7; border-radius: 5px; background: #fff; font: inherit; }
+.saved-cards { display: grid; gap: 6px; }.saved-cards label { display: flex; align-items: center; gap: 8px; margin: 0; padding: 10px; border: 1px solid #efcbd0; background: #fff; }.saved-cards input { width: auto; }
+.payment-fields { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }.add-card-link { margin-top: 14px; padding: 0; border: 0; color: var(--wine); background: transparent; font: 600 13px 'DM Sans', sans-serif; text-decoration: underline; cursor: pointer; }
+
 
 /* =========================================
    RESPONSIVO
