@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Monte seu bolo | Kelly Cakes</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,700&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="css/montarBolo.css">
+  <link rel="stylesheet" href="css/cart.css">
+  <script src="js/cart.js" defer></script>
+</head>
+
+<body>
+  <header class="mb-header">
+    <div class="mb-wrap mb-header-inner">
+      <a class="mb-brand" href="portfolio.html"><img src="img/logoHeader.png" alt="Kelly Cakes"></a>
+      <nav aria-label="Navegação principal">
+        <a href="portfolio.html#sabores">Como montar?</a>
+        <a href="portfolio.html#pedido">Como pedir</a>
+        <a href="portfolio.html#contato">Contato</a>
+        <a href="portfolio.html">Catálogo</a>
+
+        <a class="mb-cart" href="carrinho.html" aria-label="Carrinho"><i class="bi bi-cart"></i></a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="montar-bolo">
+    <section class="mb-hero">
+      <div class="mb-wrap mb-hero-content">
+        <h1>Monte seu bolo do<br>seu <em>jeito</em></h1>
+        <p>Escolha cada detalhe e deixe seu<br>momento ainda mais especial.</p>
+      </div>
+    </section>
+
+    <form id="cake-form" class="mb-form mb-wrap" action="resumoBolo.html" method="get">
+      <fieldset class="mb-step">
+        <legend><span>1</span> Escolha o número de andares</legend>
+        <p class="mb-help">Cada andar tem um limite máximo de peso e uma média de pessoas.</p>
+        <div class="mb-tier-options">
+          <label class="mb-tier-card"><input type="radio" name="andares" value="1" required><img
+              src="img/bolo1andar.png" alt="Bolo de 1 andar"><strong>1 andar</strong><small>1 kg até 4 kg</small><b>R$:
+              120</b></label>
+          <label class="mb-tier-card"><input type="radio" name="andares" value="2"><img src="img/bolo2andar.png"
+              alt="Bolo de 2 andares"><strong>2 andares</strong><small>4 kg até 8 kg</small><b>R$: 220</b></label>
+          <label class="mb-tier-card"><input type="radio" name="andares" value="3"><img src="img/bolo3andares.png"
+              alt="Bolo de 3 andares"><strong>3 andares</strong><small>8 kg até 12 kg</small><b>R$: 320</b></label>
+        </div>
+      </fieldset>
+
+      <fieldset class="mb-step">
+        <legend><span>2</span> Escolha o peso</legend>
+        <p class="mb-help">Defina o peso desejado para cada andar.</p>
+        <div class="mb-select-grid mb-panel">
+          <label data-floor="1">1º andar<select name="peso-1">
+              <option value="">Selecione</option>
+              <option>1 kg</option>
+              <option>2 kg</option>
+              <option>3 kg</option>
+              <option>4 kg</option>
+            </select></label>
+          <label data-floor="2">2º andar<select name="peso-2">
+              <option value="">Selecione</option>
+              <option>4 kg</option>
+              <option>6 kg</option>
+              <option>8 kg</option>
+            </select></label>
+          <label data-floor="3">3º andar<select name="peso-3">
+              <option value="">Selecione</option>
+              <option>8 kg</option>
+              <option>10 kg</option>
+              <option>12 kg</option>
+            </select></label>
+        </div>
+      </fieldset>
+
+      <fieldset class="mb-step">
+        <legend><span>3</span> Escolha a massa</legend>
+        <p class="mb-help">Selecione um tipo de massa para cada andar.</p>
+        <div class="mb-select-grid mb-panel">
+          <label data-floor="1">1º andar<select name="massa-1">
+              <option value="">Selecione</option>
+              <option>Red Velvet</option>
+              <option>Chocolate</option>
+              <option>Baunilha</option>
+            </select></label>
+          <label data-floor="2">2º andar<select name="massa-2">
+              <option value="">Selecione</option>
+              <option>Red Velvet</option>
+              <option>Chocolate</option>
+              <option>Baunilha</option>
+            </select></label>
+          <label data-floor="3">3º andar<select name="massa-3">
+              <option value="">Selecione</option>
+              <option>Red Velvet</option>
+              <option>Chocolate</option>
+              <option>Baunilha</option>
+            </select></label>
+        </div>
+      </fieldset>
+
+      <fieldset class="mb-step">
+        <legend><span>4</span> Escolha os recheios</legend>
+        <p class="mb-help">Para cada andar, selecione dois tipos de recheio.</p>
+        <div class="mb-fillings mb-panel">
+          <div data-floor="1"><strong>1º andar</strong><label>Recheio 1<select name="recheio-1a">
+                <option value="">Selecione</option>
+                <option>Brigadeiro tradicional</option>
+                <option>Doce de leite</option>
+                <option>Ninho</option>
+                <option>Framboesa</option>
+              </select></label><label>Recheio 2<select name="recheio-1b">
+                <option value="">Selecione</option>
+                <option>Brigadeiro branco</option>
+                <option>Ganache de chocolate</option>
+                <option>Coco</option>
+                <option>Pistache</option>
+              </select></label></div>
+          <div data-floor="2"><strong>2º andar</strong><label>Recheio 1<select name="recheio-2a">
+                <option value="">Selecione</option>
+                <option>Brigadeiro tradicional</option>
+                <option>Doce de leite</option>
+                <option>Ninho</option>
+                <option>Framboesa</option>
+              </select></label><label>Recheio 2<select name="recheio-2b">
+                <option value="">Selecione</option>
+                <option>Brigadeiro branco</option>
+                <option>Ganache de chocolate</option>
+                <option>Coco</option>
+                <option>Pistache</option>
+              </select></label></div>
+          <div data-floor="3"><strong>3º andar</strong><label>Recheio 1<select name="recheio-3a">
+                <option value="">Selecione</option>
+                <option>Brigadeiro tradicional</option>
+                <option>Doce de leite</option>
+                <option>Ninho</option>
+                <option>Framboesa</option>
+              </select></label><label>Recheio 2<select name="recheio-3b">
+                <option value="">Selecione</option>
+                <option>Brigadeiro branco</option>
+                <option>Ganache de chocolate</option>
+                <option>Coco</option>
+                <option>Pistache</option>
+              </select></label></div>
+        </div>
+      </fieldset>
+
+      <fieldset class="mb-step">
+        <legend><span>5</span> Escolha a cobertura</legend>
+        <p class="mb-help">Selecione o tipo de cobertura do seu bolo.</p>
+        <div class="mb-choice-grid">
+          <label><input type="radio" name="cobertura" value="Chantininho"
+              required><span>Chantininho</span></label><label><input type="radio" name="cobertura"
+              value="Ganache"><span>Ganache</span></label><label><input type="radio" name="cobertura"
+              value="Buttercream"><span>Buttercream</span></label><label><input type="radio" name="cobertura"
+              value="Pasta Americana"><span>Pasta Americana</span></label><label><input type="radio" name="cobertura"
+              value="Brigadeiro"><span>Brigadeiro</span></label><label><input type="radio" name="cobertura"
+              value="Naked Cake"><span>Naked Cake</span></label>
+        </div>
+      </fieldset>
+
+      <fieldset class="mb-step">
+        <legend><span>6</span> Escolha a decoração</legend>
+        <p class="mb-help">Selecione o estilo de decoração do seu bolo.</p>
+        <div class="mb-decoration-grid">
+          <label><input type="radio" name="decoracao" value="Flores" required><img src="img/boloflores.png"
+              alt="Bolo decorado com flores"><span>Flores</span></label>
+          <label><input type="radio" name="decoracao" value="Vintage"><img src="img/boloVintage.png"
+              alt="Bolo com decoração vintage"><span>Vintage</span></label>
+          <label><input type="radio" name="decoracao" value="Romântico"><img src="img/boloflores.png"
+              alt="Bolo com decoração romântica"><span>Romântico</span></label>
+          <label><input type="radio" name="decoracao" value="Minimalista"><img src="img/bolominimalista.png"
+              alt="Bolo com decoração minimalista"><span>Minimalista</span></label>
+          <label><input type="radio" name="decoracao" value="Luxo"><img src="img/boloVintage.png"
+              alt="Bolo com decoração de luxo"><span>Luxo</span></label>
+          <label><input type="radio" name="decoracao" value="Temático"><img src="img/bolotematico.png"
+              alt="Bolo com decoração temática"><span>Temático</span></label>
+        </div>
+        <div class="mb-photo-upload">
+          <input id="foto-modelo" type="file" accept="image/png,image/jpeg,image/webp"
+            aria-describedby="foto-modelo-ajuda">
+          <input id="foto-modelo-dados" type="hidden">
+          <label for="foto-modelo"> <i class="bi bi-image"></i> Adicionar foto de referência</label>
+          <p id="foto-modelo-ajuda">Envie uma foto do modelo desejado (PNG, JPG ou WEBP, até 1 MB).</p>
+          <img id="foto-modelo-preview" alt="Prévia da foto de referência" hidden>
+        </div>
+      </fieldset>
+
+      <fieldset class="mb-step mb-notes">
+        <legend><span>7</span> Observação</legend>
+        <p class="mb-help">Escreva as observações necessárias.</p>
+        <label class="sr-only" for="observacao">Observação do pedido</label>
+        <textarea id="observacao" name="observacao"
+          placeholder="Ex.: Mensagem no bolo, cores específicas, restrição alimentar..."></textarea>
+      </fieldset>
+      <button class="mb-submit" type="submit">Continuar</button>
+    </form>
+  </main>
+  <script>
+    const floorOptions = document.querySelectorAll('input[name="andares"]');
+    const floorFields = document.querySelectorAll('[data-floor]');
+
+    function updateAvailableFloors() {
+      const selectedFloor = Number(document.querySelector('input[name="andares"]:checked')?.value || 0);
+      floorFields.forEach((group) => {
+        const isAvailable = !selectedFloor || Number(group.dataset.floor) <= selectedFloor;
+        group.classList.toggle('is-inactive', !isAvailable);
+        group.querySelectorAll('select, input, textarea').forEach((field) => {
+          field.disabled = !isAvailable;
+          if (!isAvailable) field.value = '';
+        });
+      });
+    }
+
+    floorOptions.forEach((option) => option.addEventListener('change', updateAvailableFloors));
+
+    const photoInput = document.querySelector('#foto-modelo');
+    const photoData = document.querySelector('#foto-modelo-dados');
+    const photoPreview = document.querySelector('#foto-modelo-preview');
+    const photoHelp = document.querySelector('#foto-modelo-ajuda');
+    photoInput.addEventListener('change', () => {
+      const [file] = photoInput.files;
+      photoData.value = '';
+      photoPreview.hidden = true;
+      if (!file) return;
+      if (file.size > 1024 * 1024) {
+        photoHelp.textContent = 'Escolha uma imagem de até 1 MB.';
+        photoInput.value = '';
+        return;
+      }
+      const reader = new FileReader();
+      reader.addEventListener('load', () => {
+        photoData.value = reader.result;
+        photoPreview.src = reader.result;
+        photoPreview.hidden = false;
+        photoHelp.textContent = `Foto selecionada: ${file.name}`;
+      });
+      reader.readAsDataURL(file);
+    });
+
+    document.querySelector('#cake-form').addEventListener('submit', (event) => {
+      if (!event.currentTarget.checkValidity()) return;
+      const choices = Object.fromEntries(new FormData(event.currentTarget).entries());
+      choices['foto-modelo'] = photoData.value;
+      sessionStorage.setItem('kelly-cake-choice', JSON.stringify(choices));
+    });
+  </script>
+</body>
+
+</html>

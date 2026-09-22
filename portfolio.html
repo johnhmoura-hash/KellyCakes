@@ -9,13 +9,14 @@
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
   <link rel="stylesheet" href="css/portfolio.css">
+  <link rel="stylesheet" href="css/cart.css">
 </head>
 <body>
   <header class="site-header">
     <div class="header-inner">
-      <a class="brand" href="index.html"><img src="img/logoHeader.png" alt="Kelly Cakes"></a>
+      <a class="brand" href="portfolio.html"><img src="img/logoHeader.png" alt="Kelly Cakes"></a>
       <nav class="menu" aria-label="Navegação principal">
-       <div><a href="#montar">Como montar?</a></div>
+       <div><a href="#sabores">Como montar?</a></div>
         <div><a href="#pedido">Como pedir</a></div>
         <div><a href="#contato">Contato</a></div>
         <div><a href="#catalogo">Catálogo</a></div>
@@ -32,7 +33,7 @@
           <p class="eyebrow">PORTFÓLIO KELLY CAKES</p>
           <h1>Feitos com amor<br>para momentos<br><em>inesquecíveis.</em></h1>
           <p class="hero-text">Bolos artesanais pensados para celebrar histórias, pessoas e os detalhes que fazem cada ocasião ser única.</p>
-          <a class="button button-fill" href="#pedido">Montar meu bolo <span>↗</span></a>
+          <a class="button button-fill" href="montarBolo.html">Montar meu bolo <span>↗</span></a>
         </div>
         <div class="hero-art"><img src="img/boloMarrom.png" alt="Bolos Kelly Cakes em diferentes ANDARES"></div>
       </div>
@@ -56,6 +57,7 @@
         </div>
       </div>
     </section> -->
+    
      <section class="about" id="sobre">
       <div class="wrap about-grid">
         <div class="about-statement"><p class="eyebrow">SOBRE NÓS</p><h2>Doce é sentir<br>cuidado em cada<br><em>detalhe.</em></h2></div>
@@ -76,7 +78,7 @@
           <p>Um passo a passo completo para você criar o bolo dos seus sonhos.</p>
         </div>
         <div class="size-panel">
-          <div><span class="step-number">1.</span><h3>Escolha o tamanho</h3></div>
+          <div><span class="step-number">1.</span><h3>Escolha o <em> tamanho</em></h3></div>
           <img src="img/d54f87a4-acfa-467b-9403-7f1f16b977c2.png" alt="Opções de bolo de um, dois ou três ANDARES">
         </div>
         <div class="builder-details">
@@ -104,7 +106,7 @@
           <article class="choice">
             <span class="step-number">5.</span><div><h3>Escolha a<em>decoração</em></h3><p>Vintage<br>Clássico<br>Romântico<br>Minimalista<br>Luxo<br>Temático</p></div></article>
         </div>
-        <div class="builder-action"><a class="button button-fill" href="#pedido">Montar meu bolo <span>↗</span></a></div>
+        <div class="builder-action"><a class="button button-fill" href="montarBolo.html">Montar meu bolo <span>↗</span></a></div>
       </div>
        <img class="bolo-divisor" src="img/boloFatiaNovo.png" alt="Fatia de bolo">
     </section>
@@ -124,12 +126,40 @@
           <address><p><strong>Endereço</strong><br>Rua Exemplo, nº 000 — Centro<br>Alta Floresta — MT</p><p><strong>Horário de retirada</strong><br>Segunda a sábado — 08h às 18h</p></address>
         </div>
       </div>
-      <footer class="contacts" id="contato"><h2>Contatos</h2><div><a href="https://instagram.com" target="_blank" rel="noreferrer">◎ @KellyCakes</a><a href="mailto:kellycakes@gmail.com">✉ kellycakes@gmail.com</a></div></footer>
-      <img class="coracao" src="img/coracao.png" alt="coracao">
     </section>
     <section class="order" id="pedido">
       <div class="wrap order-inner"><div><p class="eyebrow">VAMOS CRIAR JUNTOS?</p><h2>Seu momento merece<br>um bolo <em>especial.</em></h2></div><a class="button button-light" href="mailto:contato@kellycakes.com">Fazer pedido <span>↗</span></a></div>
     </section>
   </main>
+  <footer class="site-footer" id="contato">
+    <img class="coracao" src="img/coracao.png" alt="">
+    <div class="wrap footer-grid">
+      <div class="footer-brand">
+        <a href="portfolio.html"><img src="img/logoHeader.png" alt="Kelly Cakes"></a>
+        <p>Bolos artesanais feitos com carinho para deixar seus momentos ainda mais especiais.</p>
+      </div>
+      <div>
+        <h2>Contato</h2>
+        <ul class="footer-list">
+          <li><a href="https://instagram.com" target="_blank" rel="noreferrer">Instagram: @KellyCakes</a></li>
+          <li><a href="mailto:kellycakes@gmail.com">kellycakes@gmail.com</a></li>
+          <li><a href="tel:+5566999990000">(66) 99999-0000</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>Informações</h2>
+        <ul class="footer-list">
+          <li>Rua Exemplo, nº 000 — Centro</li>
+          <li>Alta Floresta — MT</li>
+          <li>Segunda a sábado, 08h às 18h</li>
+        </ul>
+      </div>
+    </div>
+    <div class="wrap footer-bottom">
+      <p>© 2026 Kelly Cakes. Todos os direitos reservados.</p>
+      <a href="#pedido">Fazer pedido</a>
+    </div>
+  </footer>
+  <script src="js/cart.js"></script>
 </body>
 </html>
