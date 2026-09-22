@@ -1,1 +1,32 @@
-<!doctype html><html lang="pt-BR"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Cadastro | Kelly Cakes</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet"><link rel="stylesheet" href="css/pages.css"><script src="js/auth.js" defer></script><script src="js/cadastro.js" defer></script></head><body class="kc-page"><main class="kc-page-main"><a href="portfolio.html">← Voltar para a loja</a><h1>Crie sua conta</h1><p class="kc-intro">Cadastre-se para finalizar pedidos e acompanhar cada etapa.</p><form id="register-form" class="kc-auth-card"><p id="auth-message" class="kc-message" aria-live="polite"></p><label>Nome completo<input name="name" required autocomplete="name"></label><label>E-mail<input name="email" type="email" required autocomplete="email"></label><label>Telefone<input name="phone" type="tel" required autocomplete="tel"></label><label>Senha<input name="password" type="password" minlength="6" required autocomplete="new-password"></label><button class="kc-primary">Criar conta</button><p class="kc-auth-switch">Já possui cadastro? <a id="login-link" href="login.html">Entrar</a></p></form></main><script>document.querySelector('#login-link').href = `login.html${location.search}`;</script></body></html>
+<!doctype html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Cadastro | Kelly Cakes</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/pages.css">
+    <script src="js/auth.js" defer></script>
+    <script src="js/cadastro.js" defer></script>
+</head>
+
+<body class="kc-page">
+    <main class="kc-page-main"><a href="portfolio.html">← Voltar para a loja</a>
+        <h1>Crie sua conta</h1>
+        <p class="kc-intro">Cadastre-se para finalizar pedidos e acompanhar cada etapa.</p>
+        <form id="register-form" class="kc-auth-card">
+            <p id="auth-message" class="kc-message" aria-live="polite"></p><label>Nome completo<input name="name"
+                    required autocomplete="name"></label><label>E-mail<input name="email" type="email" required
+                    autocomplete="email"></label><label>Telefone<input name="phone" type="tel" required
+                    autocomplete="tel"></label><label>Senha<input name="password" type="password" minlength="6" required
+                    autocomplete="new-password"></label><button class="kc-primary">Criar conta</button>
+            <p class="kc-auth-switch">Já possui cadastro? <a id="login-link" href="login.html">Entrar</a></p>
+        </form>
+    </main>
+    <script>document.querySelector('#login-link').href = `login.html${location.search}`;</script>
+</body>
+
+</html>

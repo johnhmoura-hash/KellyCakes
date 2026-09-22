@@ -1,0 +1,1 @@
+(() => { const key = 'kelly-cakes-staff-user'; const getUser = () => { try { return JSON.parse(localStorage.getItem(key) || 'null'); } catch { return null; } }; window.KellyStaffAuth = { getUser, login: (user) => localStorage.setItem(key, JSON.stringify(user)), logout: () => localStorage.removeItem(key) }; })();

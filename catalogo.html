@@ -1,1 +1,35 @@
-<!doctype html><html lang="pt-BR"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Catálogo | Kelly Cakes</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet"><link rel="stylesheet" href="css/pages.css"></head><body class="kc-page"><main class="kc-catalog"><a href="portfolio.html">← Voltar para a loja</a><h1>Catálogo de bolos</h1><p class="kc-intro">Escolha um modelo pronto e personalize sabores, recheios e os detalhes finais.</p><section class="kc-catalog-grid"><article class="kc-catalog-card"><img src="img/boloVintage.png" alt="Bolo vintage"><h2>Vintage</h2><p>Delicado, com acabamentos clássicos e cheio de charme.</p><a class="kc-primary" href="montarBolo.html?modelo=vintage">Escolher e alterar</a></article><article class="kc-catalog-card"><img src="img/boloflores.png" alt="Bolo com flores"><h2>Romântico floral</h2><p>Uma escolha suave para momentos especiais e celebrações.</p><a class="kc-primary" href="montarBolo.html?modelo=flores">Escolher e alterar</a></article><article class="kc-catalog-card"><img src="img/bolominimalista.png" alt="Bolo minimalista"><h2>Minimalista</h2><p>Visual limpo e elegante, pronto para receber seu toque.</p><a class="kc-primary" href="montarBolo.html?modelo=minimalista">Escolher e alterar</a></article></section></main></body></html>
+<!doctype html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Catálogo | Kelly Cakes</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="css/pages.css">
+    <link rel="stylesheet" href="css/cart.css">
+</head>
+
+<body class="kc-page">
+    <div data-kc-header></div>
+    <section class="kc-catalog-hero">
+        <div class="kc-catalog-hero__inner">
+            <h1>Catálogo de <em>bolos</em></h1>
+            <p>Escolha um modelo pronto e personalize sabores, recheios e os detalhes finais.</p>
+        </div>
+    </section>
+    <main class="kc-catalog">
+        <section id="catalog-grid" class="kc-catalog-grid" aria-live="polite"></section>
+    </main>
+    <script src="js/catalogo.js" defer></script>
+    <script src="js/header.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/cart.js"></script>
+</body>
+
+</html>

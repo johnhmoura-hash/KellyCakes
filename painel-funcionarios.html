@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Painel da equipe | Kelly Cakes</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/pages.css">
+    <script src="js/staff-auth.js" defer></script>
+    <script src="js/staff-panel.js" defer></script>
+</head>
+
+<body class="kc-page">
+    <main class="kc-staff">
+        <header class="kc-staff-header">
+            <div>
+                <p class="kc-eyebrow">KELLY CAKES</p>
+                <h1>Painel da equipe</h1>
+                <p id="staff-name" class="kc-intro">Gerencie o atendimento da loja.</p>
+            </div>
+            <div><a class="kc-link-button" href="catalogo.html" target="_blank">Ver catálogo</a><button
+                    id="staff-logout" class="kc-secondary">Sair</button></div>
+        </header>
+        <nav class="kc-staff-tabs"><button class="is-active" data-tab="orders">Pedidos</button><button
+                data-tab="new-order">Emitir pedido</button><button data-tab="catalog">Catálogo</button></nav>
+        <section id="orders" class="kc-staff-section is-active">
+            <div class="kc-section-heading">
+                <div>
+                    <h2>Pedidos recebidos</h2>
+                    <p>Atualize cada pedido conforme ele avança na produção.</p>
+                </div><span id="orders-count" class="kc-counter"></span>
+            </div>
+            <div id="staff-orders" class="kc-orders"></div>
+        </section>
+        <section id="new-order" class="kc-staff-section">
+            <div class="kc-section-heading">
+                <div>
+                    <h2>Emitir novo pedido</h2>
+                    <p>Registre encomendas feitas pelo atendimento.</p>
+                </div>
+            </div>
+            <form id="new-order-form" class="kc-form-grid kc-panel-card"><label>Nome do cliente<input
+                        name="customerName" required></label><label>E-mail do cliente<input name="email" type="email"
+                        required></label><label>Telefone<input name="phone" type="tel"></label><label>Data de
+                    retirada<input name="pickupDate" type="date"></label><label class="kc-form-wide">Descrição do
+                    pedido<input name="name" placeholder="Ex.: Bolo de aniversário, 20 fatias"
+                        required></label><label>Valor total (R$)<input name="total" type="number" min="0" step="0.01"
+                        required></label><label>Status inicial<select name="status">
+                        <option>Recebido</option>
+                        <option>Em produção</option>
+                        <option>Pronto para retirada</option>
+                    </select></label><label class="kc-form-wide">Observações<textarea name="notes"
+                        rows="3"></textarea></label>
+                <div class="kc-form-wide"><button class="kc-primary">Emitir pedido</button></div>
+            </form>
+        </section>
+        <section id="catalog" class="kc-staff-section">
+            <div class="kc-section-heading">
+                <div>
+                    <h2>Itens do catálogo</h2>
+                    <p>Adicione fotos e modelos que serão exibidos na loja.</p>
+                </div>
+            </div>
+            <form id="catalog-form" class="kc-form-grid kc-panel-card"><label>Nome do bolo<input name="title"
+                        required></label><label>Preço a partir de (R$)<input name="price" type="number" min="0"
+                        step="0.01"></label><label class="kc-form-wide">Descrição<textarea name="description" rows="3"
+                        required></textarea></label><label class="kc-form-wide">Foto do bolo<input name="photo"
+                        type="file" accept="image/*" required><small>PNG, JPG ou WEBP. A imagem fica salva neste
+                        navegador.</small></label>
+                <div class="kc-form-wide"><button class="kc-primary">Adicionar ao catálogo</button></div>
+            </form>
+            <div id="staff-catalog" class="kc-catalog-grid kc-manage-catalog"></div>
+        </section>
+    </main>
+</body>
+
+</html>
