@@ -1,0 +1,71 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Jureildo\\KellyCakes\\KellyBack\\KellyBack\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{DA31E020-9765-4F0F-9AEB-55704283B280}|KellyBack.csproj|c:\\jureildo\\kellycakes\\kellyback\\kellyback\\controllers\\usuariocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DA31E020-9765-4F0F-9AEB-55704283B280}|KellyBack.csproj|solutionrelative:controllers\\usuariocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DA31E020-9765-4F0F-9AEB-55704283B280}|KellyBack.csproj|c:\\jureildo\\kellycakes\\kellyback\\kellyback\\models\\dbkellycakescontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DA31E020-9765-4F0F-9AEB-55704283B280}|KellyBack.csproj|solutionrelative:models\\dbkellycakescontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DA31E020-9765-4F0F-9AEB-55704283B280}|KellyBack.csproj|c:\\jureildo\\kellycakes\\kellyback\\kellyback\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{DA31E020-9765-4F0F-9AEB-55704283B280}|KellyBack.csproj|solutionrelative:appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "UsuarioController.cs",
+              "DocumentMoniker": "C:\\Jureildo\\KellyCakes\\KellyBack\\KellyBack\\Controllers\\UsuarioController.cs",
+              "RelativeDocumentMoniker": "Controllers\\UsuarioController.cs",
+              "ToolTip": "C:\\Jureildo\\KellyCakes\\KellyBack\\KellyBack\\Controllers\\UsuarioController.cs",
+              "RelativeToolTip": "Controllers\\UsuarioController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-09-29T12:19:44.295Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Jureildo\\KellyCakes\\KellyBack\\KellyBack\\appsettings.json",
+              "RelativeDocumentMoniker": "appsettings.json",
+              "ToolTip": "C:\\Jureildo\\KellyCakes\\KellyBack\\KellyBack\\appsettings.json",
+              "RelativeToolTip": "appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2026-09-29T12:09:23.843Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "DbKellyCakesContext.cs",
+              "DocumentMoniker": "C:\\Jureildo\\KellyCakes\\KellyBack\\KellyBack\\Models\\DbKellyCakesContext.cs",
+              "RelativeDocumentMoniker": "Models\\DbKellyCakesContext.cs",
+              "ToolTip": "C:\\Jureildo\\KellyCakes\\KellyBack\\KellyBack\\Models\\DbKellyCakesContext.cs",
+              "RelativeToolTip": "Models\\DbKellyCakesContext.cs",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAQwCMAAAAnAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-09-29T12:07:23.817Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
