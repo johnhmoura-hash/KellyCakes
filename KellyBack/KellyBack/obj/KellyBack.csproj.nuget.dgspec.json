@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Jureildo\\KellyCakes\\KellyBack\\KellyBack\\KellyBack.csproj": {}
+    "C:\\Jureildo\\KellyCakes\\KellyBack\\kellyBack\\KellyBack.csproj": {}
   },
   "projects": {
-    "C:\\Jureildo\\KellyCakes\\KellyBack\\KellyBack\\KellyBack.csproj": {
+    "C:\\Jureildo\\KellyCakes\\KellyBack\\kellyBack\\KellyBack.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Jureildo\\KellyCakes\\KellyBack\\KellyBack\\KellyBack.csproj",
+        "projectUniqueName": "C:\\Jureildo\\KellyCakes\\KellyBack\\kellyBack\\KellyBack.csproj",
         "projectName": "KellyBack",
-        "projectPath": "C:\\Jureildo\\KellyCakes\\KellyBack\\KellyBack\\KellyBack.csproj",
+        "projectPath": "C:\\Jureildo\\KellyCakes\\KellyBack\\kellyBack\\KellyBack.csproj",
         "packagesPath": "C:\\Users\\manha.ceticc\\.nuget\\packages\\",
-        "outputPath": "C:\\Jureildo\\KellyCakes\\KellyBack\\KellyBack\\obj\\",
+        "outputPath": "C:\\Jureildo\\KellyCakes\\KellyBack\\kellyBack\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

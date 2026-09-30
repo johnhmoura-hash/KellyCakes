@@ -1,0 +1,461 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "KellyBack",
+    "version": "1.0"
+  },
+  "paths": {
+    "/Bolo": {
+      "post": {
+        "tags": [
+          "Bolo"
+        ],
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "IdBolo": {
+                    "type": "integer",
+                    "format": "int32"
+                  },
+                  "Preco": {
+                    "type": "integer",
+                    "format": "int32"
+                  },
+                  "Peso": {
+                    "type": "integer",
+                    "format": "int32"
+                  },
+                  "TipoCobertura": {
+                    "type": "string"
+                  },
+                  "Decoracao": {
+                    "type": "string"
+                  },
+                  "FotoReferencia": {
+                    "type": "string"
+                  },
+                  "Observacao": {
+                    "type": "string"
+                  },
+                  "ItemCarrinhos": {
+                    "type": "array",
+                    "items": {
+                      "$ref": "#/components/schemas/ItemCarrinho"
+                    }
+                  },
+                  "ItemPedidos": {
+                    "type": "array",
+                    "items": {
+                      "$ref": "#/components/schemas/ItemPedido"
+                    }
+                  },
+                  "ArquivoFoto": {
+                    "type": "string",
+                    "format": "binary"
+                  }
+                }
+              },
+              "encoding": {
+                "IdBolo": {
+                  "style": "form"
+                },
+                "Preco": {
+                  "style": "form"
+                },
+                "Peso": {
+                  "style": "form"
+                },
+                "TipoCobertura": {
+                  "style": "form"
+                },
+                "Decoracao": {
+                  "style": "form"
+                },
+                "FotoReferencia": {
+                  "style": "form"
+                },
+                "Observacao": {
+                  "style": "form"
+                },
+                "ItemCarrinhos": {
+                  "style": "form"
+                },
+                "ItemPedidos": {
+                  "style": "form"
+                },
+                "ArquivoFoto": {
+                  "style": "form"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "get": {
+        "tags": [
+          "Bolo"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/Carrinho/adicionar": {
+      "post": {
+        "tags": [
+          "Carrinho"
+        ],
+        "parameters": [
+          {
+            "name": "idBolo",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/Carrinho": {
+      "get": {
+        "tags": [
+          "Carrinho"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/Usuario/login": {
+      "post": {
+        "tags": [
+          "Usuario"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Usuario"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Usuario"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Usuario"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/Usuario": {
+      "post": {
+        "tags": [
+          "Usuario"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Usuario"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Usuario"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Usuario"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/Usuario/logout": {
+      "post": {
+        "tags": [
+          "Usuario"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/Usuario/Deletar/{id}": {
+      "delete": {
+        "tags": [
+          "Usuario"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "Bolo": {
+        "type": "object",
+        "properties": {
+          "idBolo": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "preco": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "peso": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "tipoCobertura": {
+            "type": "string",
+            "nullable": true
+          },
+          "decoracao": {
+            "type": "string",
+            "nullable": true
+          },
+          "fotoReferencia": {
+            "type": "string",
+            "nullable": true
+          },
+          "observacao": {
+            "type": "string",
+            "nullable": true
+          },
+          "itemCarrinhos": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ItemCarrinho"
+            },
+            "nullable": true
+          },
+          "itemPedidos": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ItemPedido"
+            },
+            "nullable": true
+          },
+          "arquivoFoto": {
+            "type": "string",
+            "format": "binary",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "Carrinho": {
+        "type": "object",
+        "properties": {
+          "idCarrinho": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "fkUsuarioIdUsuario": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "fkUsuarioIdUsuarioNavigation": {
+            "$ref": "#/components/schemas/Usuario"
+          },
+          "itemCarrinhos": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ItemCarrinho"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "ItemCarrinho": {
+        "type": "object",
+        "properties": {
+          "idItemCarrinho": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "fkCarrinhoIdCarrinho": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "fkBoloIdBolo": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "quantidade": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "fkBoloIdBoloNavigation": {
+            "$ref": "#/components/schemas/Bolo"
+          },
+          "fkCarrinhoIdCarrinhoNavigation": {
+            "$ref": "#/components/schemas/Carrinho"
+          }
+        },
+        "additionalProperties": false
+      },
+      "ItemPedido": {
+        "type": "object",
+        "properties": {
+          "idItemPedido": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "fkPedidoIdPedido": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "fkBoloIdBolo": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "quantidade": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "precoUnitario": {
+            "type": "number",
+            "format": "double"
+          },
+          "fkBoloIdBoloNavigation": {
+            "$ref": "#/components/schemas/Bolo"
+          },
+          "fkPedidoIdPedidoNavigation": {
+            "$ref": "#/components/schemas/Pedido"
+          }
+        },
+        "additionalProperties": false
+      },
+      "Pedido": {
+        "type": "object",
+        "properties": {
+          "idPedido": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "statusPedido": {
+            "type": "string",
+            "nullable": true
+          },
+          "dataPedido": {
+            "type": "string",
+            "format": "date",
+            "nullable": true
+          },
+          "fkFuncionarioIdFuncionario": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "fkUsuarioIdUsuario": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "itemPedidos": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ItemPedido"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "Usuario": {
+        "type": "object",
+        "properties": {
+          "idUsuario": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "cpf": {
+            "type": "string",
+            "nullable": true
+          },
+          "nome": {
+            "type": "string",
+            "nullable": true
+          },
+          "email": {
+            "type": "string",
+            "nullable": true
+          },
+          "telefone": {
+            "type": "string",
+            "nullable": true
+          },
+          "senha": {
+            "type": "string",
+            "nullable": true
+          },
+          "carrinhos": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Carrinho"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      }
+    }
+  }
+}
