@@ -20,6 +20,10 @@ public partial class Bolo
 
     public string? Observacao { get; set; }
 
+    public virtual ICollection<BoloMassa> BoloMassas { get; set; } = new List<BoloMassa>();
+
+    public virtual ICollection<BoloRecheio> BoloRecheios { get; set; } = new List<BoloRecheio>();
+
     public virtual ICollection<ItemCarrinho> ItemCarrinhos { get; set; } = new List<ItemCarrinho>();
 
     public virtual ICollection<ItemPedido> ItemPedidos { get; set; } = new List<ItemPedido>();

@@ -18,6 +18,10 @@ public partial class DbKellyCakesContext : DbContext
 
     public virtual DbSet<Bolo> Bolos { get; set; }
 
+    public virtual DbSet<BoloMassa> BoloMassas { get; set; }
+
+    public virtual DbSet<BoloRecheio> BoloRecheios { get; set; }
+
     public virtual DbSet<Carrinho> Carrinhos { get; set; }
 
     public virtual DbSet<Cartao> Cartaos { get; set; }
@@ -69,6 +73,50 @@ public partial class DbKellyCakesContext : DbContext
                 .HasMaxLength(100)
                 .IsUnicode(false)
                 .HasColumnName("tipo_cobertura");
+        });
+
+        modelBuilder.Entity<BoloMassa>(entity =>
+        {
+            entity.HasKey(e => e.IdBoloMassa).HasName("PK__BoloMass__09115F8A3CC94C0E");
+
+            entity.ToTable("BoloMassa");
+
+            entity.Property(e => e.IdBoloMassa).HasColumnName("id_bolo_massa");
+            entity.Property(e => e.FkBoloIdBolo).HasColumnName("fk_bolo_id_bolo");
+            entity.Property(e => e.FkMassaIdMassa).HasColumnName("fk_massa_id_massa");
+            entity.Property(e => e.NumeroAndar).HasColumnName("numero_andar");
+
+            entity.HasOne(d => d.FkBoloIdBoloNavigation).WithMany(p => p.BoloMassas)
+                .HasForeignKey(d => d.FkBoloIdBolo)
+                .OnDelete(DeleteBehavior.ClientSetNull)
+                .HasConstraintName("FK__BoloMassa__fk_bo__45F365D3");
+
+            entity.HasOne(d => d.FkMassaIdMassaNavigation).WithMany(p => p.BoloMassas)
+                .HasForeignKey(d => d.FkMassaIdMassa)
+                .OnDelete(DeleteBehavior.ClientSetNull)
+                .HasConstraintName("FK__BoloMassa__fk_ma__46E78A0C");
+        });
+
+        modelBuilder.Entity<BoloRecheio>(entity =>
+        {
+            entity.HasKey(e => e.IdBoloRecheio).HasName("PK__BoloRech__6971E17C727E64BA");
+
+            entity.ToTable("BoloRecheio");
+
+            entity.Property(e => e.IdBoloRecheio).HasColumnName("id_bolo_recheio");
+            entity.Property(e => e.FkBoloIdBolo).HasColumnName("fk_bolo_id_bolo");
+            entity.Property(e => e.FkRecheioIdRecheio).HasColumnName("fk_recheio_id_recheio");
+            entity.Property(e => e.NumeroAndar).HasColumnName("numero_andar");
+
+            entity.HasOne(d => d.FkBoloIdBoloNavigation).WithMany(p => p.BoloRecheios)
+                .HasForeignKey(d => d.FkBoloIdBolo)
+                .OnDelete(DeleteBehavior.ClientSetNull)
+                .HasConstraintName("FK__BoloReche__fk_bo__49C3F6B7");
+
+            entity.HasOne(d => d.FkRecheioIdRecheioNavigation).WithMany(p => p.BoloRecheios)
+                .HasForeignKey(d => d.FkRecheioIdRecheio)
+                .OnDelete(DeleteBehavior.ClientSetNull)
+                .HasConstraintName("FK__BoloReche__fk_re__4AB81AF0");
         });
 
         modelBuilder.Entity<Carrinho>(entity =>
