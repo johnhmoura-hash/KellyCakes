@@ -16,10 +16,6 @@
               "schema": {
                 "type": "object",
                 "properties": {
-                  "IdBolo": {
-                    "type": "integer",
-                    "format": "int32"
-                  },
                   "Preco": {
                     "type": "integer",
                     "format": "int32"
@@ -34,34 +30,34 @@
                   "Decoracao": {
                     "type": "string"
                   },
-                  "FotoReferencia": {
-                    "type": "string"
-                  },
                   "Observacao": {
                     "type": "string"
-                  },
-                  "ItemCarrinhos": {
-                    "type": "array",
-                    "items": {
-                      "$ref": "#/components/schemas/ItemCarrinho"
-                    }
-                  },
-                  "ItemPedidos": {
-                    "type": "array",
-                    "items": {
-                      "$ref": "#/components/schemas/ItemPedido"
-                    }
                   },
                   "ArquivoFoto": {
                     "type": "string",
                     "format": "binary"
+                  },
+                  "Andares": {
+                    "type": "integer",
+                    "format": "int32"
+                  },
+                  "Massas": {
+                    "type": "array",
+                    "items": {
+                      "type": "integer",
+                      "format": "int32"
+                    }
+                  },
+                  "Recheios": {
+                    "type": "array",
+                    "items": {
+                      "type": "integer",
+                      "format": "int32"
+                    }
                   }
                 }
               },
               "encoding": {
-                "IdBolo": {
-                  "style": "form"
-                },
                 "Preco": {
                   "style": "form"
                 },
@@ -74,19 +70,19 @@
                 "Decoracao": {
                   "style": "form"
                 },
-                "FotoReferencia": {
-                  "style": "form"
-                },
                 "Observacao": {
                   "style": "form"
                 },
-                "ItemCarrinhos": {
-                  "style": "form"
-                },
-                "ItemPedidos": {
-                  "style": "form"
-                },
                 "ArquivoFoto": {
+                  "style": "form"
+                },
+                "Andares": {
+                  "style": "form"
+                },
+                "Massas": {
+                  "style": "form"
+                },
+                "Recheios": {
                   "style": "form"
                 }
               }
@@ -136,6 +132,35 @@
       "get": {
         "tags": [
           "Carrinho"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/Pedido/finalizar": {
+      "post": {
+        "tags": [
+          "Pedido"
+        ],
+        "parameters": [
+          {
+            "name": "formaPagamento",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "idCartao",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
         ],
         "responses": {
           "200": {
@@ -277,6 +302,20 @@
             "type": "string",
             "nullable": true
           },
+          "boloMassas": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/BoloMassa"
+            },
+            "nullable": true
+          },
+          "boloRecheios": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/BoloRecheio"
+            },
+            "nullable": true
+          },
           "itemCarrinhos": {
             "type": "array",
             "items": {
@@ -299,6 +338,62 @@
         },
         "additionalProperties": false
       },
+      "BoloMassa": {
+        "type": "object",
+        "properties": {
+          "idBoloMassa": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "fkBoloIdBolo": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "fkMassaIdMassa": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "numeroAndar": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "fkBoloIdBoloNavigation": {
+            "$ref": "#/components/schemas/Bolo"
+          },
+          "fkMassaIdMassaNavigation": {
+            "$ref": "#/components/schemas/TipoMassa"
+          }
+        },
+        "additionalProperties": false
+      },
+      "BoloRecheio": {
+        "type": "object",
+        "properties": {
+          "idBoloRecheio": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "fkBoloIdBolo": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "fkRecheioIdRecheio": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "numeroAndar": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "fkBoloIdBoloNavigation": {
+            "$ref": "#/components/schemas/Bolo"
+          },
+          "fkRecheioIdRecheioNavigation": {
+            "$ref": "#/components/schemas/SaborRecheio"
+          }
+        },
+        "additionalProperties": false
+      },
       "Carrinho": {
         "type": "object",
         "properties": {
@@ -317,6 +412,50 @@
             "type": "array",
             "items": {
               "$ref": "#/components/schemas/ItemCarrinho"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "Cartao": {
+        "type": "object",
+        "properties": {
+          "numCartao": {
+            "type": "string",
+            "nullable": true
+          },
+          "dtaVencimento": {
+            "type": "string",
+            "format": "date",
+            "nullable": true
+          },
+          "codigo": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "nomeCartao": {
+            "type": "string",
+            "nullable": true
+          },
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "fkUsuarioIdUsuario": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "bandeira": {
+            "type": "string",
+            "nullable": true
+          },
+          "pedidos": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Pedido"
             },
             "nullable": true
           }
@@ -409,10 +548,64 @@
             "format": "int32",
             "nullable": true
           },
+          "formaPagamento": {
+            "type": "string",
+            "nullable": true
+          },
+          "fkCartaoIdCartao": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "fkCartaoIdCartaoNavigation": {
+            "$ref": "#/components/schemas/Cartao"
+          },
           "itemPedidos": {
             "type": "array",
             "items": {
               "$ref": "#/components/schemas/ItemPedido"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "SaborRecheio": {
+        "type": "object",
+        "properties": {
+          "idRecheio": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "nome": {
+            "type": "string",
+            "nullable": true
+          },
+          "boloRecheios": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/BoloRecheio"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "TipoMassa": {
+        "type": "object",
+        "properties": {
+          "nome": {
+            "type": "string",
+            "nullable": true
+          },
+          "idMassa": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "boloMassas": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/BoloMassa"
             },
             "nullable": true
           }
@@ -446,12 +639,8 @@
             "type": "string",
             "nullable": true
           },
-          "carrinhos": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/Carrinho"
-            },
-            "nullable": true
+          "carrinho": {
+            "$ref": "#/components/schemas/Carrinho"
           }
         },
         "additionalProperties": false

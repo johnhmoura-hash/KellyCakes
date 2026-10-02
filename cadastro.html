@@ -9,8 +9,6 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/pages.css">
-    <script src="js/auth.js" defer></script>
-    <script src="js/cadastro.js" defer></script>
 </head>
 
 <body class="kc-page">
@@ -18,14 +16,35 @@
         <h1>Crie sua conta</h1>
         <p class="kc-intro">Cadastre-se para finalizar pedidos e acompanhar cada etapa.</p>
         <form id="register-form" class="kc-auth-card">
-            <p id="auth-message" class="kc-message" aria-live="polite"></p><label>Nome completo<input name="name"
-                    required autocomplete="name"></label><label>E-mail<input name="email" type="email" required
-                    autocomplete="email"></label><label>Telefone<input name="phone" type="tel" required
-                    autocomplete="tel"></label><label>Senha<input name="password" type="password" minlength="6" required
-                    autocomplete="new-password"></label><button class="kc-primary">Criar conta</button>
+            <p id="auth-message" class="kc-message" aria-live="polite"></p>
+            <label>Nome completo
+                <input name="nome" id="nome" required autocomplete="name">
+            </label>
+            <label>Telefone
+                <input name="telefone" id="numTelefone" type="tel" required autocomplete="tel">
+            </label>
+            <label>CPF
+                <input name="cpf" id="cpf" required autocomplete="tel" maxlength="15">
+            </label>
+            <label>E-mail
+                <input name="email" id="email" type="email" required autocomplete="email">
+            </label>
+            <label>Confirme seu E-mail
+                <input name="emailConfirmar" id="emailConfirmar" type="email" required autocomplete="email">
+            </label>
+            <label>Senha
+                <input name="senha" id="senha" type="password" minlength="6" required autocomplete="new-password">
+            </label>
+             <label>Confirme sua Senha
+                <input name="confirmarSenha" id="confirmarSenha" type="password" minlength="6" required autocomplete="new-password">
+            </label>
+            <button class="kc-primary">Criar conta</button>
+
             <p class="kc-auth-switch">Já possui cadastro? <a id="login-link" href="login.html">Entrar</a></p>
         </form>
     </main>
+    <script src="js/auth.js" defer></script>
+    <script src="js/cadastro.js" defer></script>
     <script>document.querySelector('#login-link').href = `login.html${location.search}`;</script>
 </body>
 

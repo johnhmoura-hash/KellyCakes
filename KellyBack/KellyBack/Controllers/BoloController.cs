@@ -102,14 +102,12 @@ namespace KellyBack.Controllers
                 {
                     FkBoloIdBolo = bolo.IdBolo,
                     FkRecheioIdRecheio = dados.Recheios[i],
-                    NumeroAndar = (i / 2) + 1
+                    NumeroAndar = (i/2) + 1
                 };
 
                 _context.BoloRecheios.Add(boloRecheio);
             }
-
             await _context.SaveChangesAsync();
-
 
             return Created("", new
             {

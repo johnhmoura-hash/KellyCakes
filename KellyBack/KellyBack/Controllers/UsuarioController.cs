@@ -45,8 +45,16 @@ namespace KellyBack.Controllers
         [HttpPost]
         public async Task<IActionResult> CriarUsuario(Usuario usuario)
         {
-            _context.Usuarios.Add(usuario);
-            await _context.SaveChangesAsync();
+            
+            try
+            {
+                _context.Usuarios.Add(usuario);
+                await _context.SaveChangesAsync();
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.ToString());
+            }
 
             return Ok(usuario);
         }
