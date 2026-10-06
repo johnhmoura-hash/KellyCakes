@@ -19,24 +19,31 @@
             <p id="auth-message" class="kc-message" aria-live="polite"></p>
             <label>Nome completo
                 <input name="nome" id="nome" required autocomplete="name">
+                 <small></small>
             </label>
             <label>Telefone
-                <input name="telefone" id="numTelefone" type="tel" required autocomplete="tel">
+                <input name="telefone" id="numTelefone" type="tel" required autocomplete="tel" maxlength="14">
+                 <small></small>
             </label>
             <label>CPF
-                <input name="cpf" id="cpf" required autocomplete="tel" maxlength="15">
+                <input name="cpf" id="cpf" required autocomplete="tel" maxlength="14">
+                 <small></small>
             </label>
             <label>E-mail
                 <input name="email" id="email" type="email" required autocomplete="email">
+                 <small></small>
             </label>
             <label>Confirme seu E-mail
                 <input name="emailConfirmar" id="emailConfirmar" type="email" required autocomplete="email">
+                 <small></small>
             </label>
             <label>Senha
                 <input name="senha" id="senha" type="password" minlength="6" required autocomplete="new-password">
+                 <small></small>
             </label>
              <label>Confirme sua Senha
                 <input name="confirmarSenha" id="confirmarSenha" type="password" minlength="6" required autocomplete="new-password">
+                 <small></small>
             </label>
             <button class="kc-primary">Criar conta</button>
 

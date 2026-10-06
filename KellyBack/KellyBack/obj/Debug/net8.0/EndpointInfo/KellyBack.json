@@ -200,6 +200,28 @@
         }
       }
     },
+    "/Usuario/verificar-cpf/{cpf}": {
+      "get": {
+        "tags": [
+          "Usuario"
+        ],
+        "parameters": [
+          {
+            "name": "cpf",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/Usuario": {
       "post": {
         "tags": [

@@ -27,6 +27,45 @@
     font-size: clamp(30px, 5vw, 42px);
 }
 
+/* Campo com erro */
+.campo.error input {
+    border: 2px solid #c94861;
+    background-color: #fff5f6;
+    outline: none;
+}
+
+.campo.error input:focus {
+    border-color: #c94861;
+    box-shadow: 0 0 0 3px rgba(201, 72, 97, 0.12);
+}
+
+.campo.error small {
+    display: block;
+    margin-top: 5px;
+    color: #c94861;
+    font-size: 13px;
+}
+
+
+/* Campo válido */
+.campo.success input {
+    border: 2px solid #4caf50;
+    background-color: #f6fff7;
+    outline: none;
+}
+
+.campo.success input:focus {
+    border-color: #4caf50;
+    box-shadow: 0 0 0 3px rgba(76, 175, 80, 0.12);
+}
+
+.campo.success small {
+    display: block;
+    margin-top: 5px;
+    color: #4caf50;
+    font-size: 13px;
+}
+
 .kc-intro {
     margin: 0 0 28px;
     color: #96705e;

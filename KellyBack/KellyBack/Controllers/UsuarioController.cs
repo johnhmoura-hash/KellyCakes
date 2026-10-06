@@ -2,6 +2,7 @@
 using KellyBack.Data;
 using KellyBack.Models;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.VisualStudio.Web.CodeGenerators.Mvc.Templates.BlazorIdentity.Pages;
 
 namespace KellyBack.Controllers
@@ -41,6 +42,22 @@ namespace KellyBack.Controllers
 
             return Ok("Login realizado com sucesso");
         }
+
+
+        [HttpGet("verificar-cpf/{cpf}")]
+        public async Task<IActionResult> VerificarCpf(string cpf)
+        {
+            cpf = cpf.Replace(".", "").Replace("-", "");
+
+            var existe = await _context.Usuarios
+                .AnyAsync(u => u.Cpf == cpf);
+
+            return Ok(new
+            {
+                existe = existe
+            });
+        }
+
 
         [HttpPost]
         public async Task<IActionResult> CriarUsuario(Usuario usuario)

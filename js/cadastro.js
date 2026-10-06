@@ -9,6 +9,7 @@
   const emailConfirmar = document.getElementById('emailConfirmar');
   const senha = document.getElementById('senha');
   const confirmarSenha = document.getElementById('confirmarSenha');
+  let cpfJaCadastrado = false;
 
 form.addEventListener('submit', function (event) {
 
@@ -97,12 +98,25 @@ function validarNumTelefone() {
 }
 
 function validarEmail() {
+
     const emailValor = email.value.trim();
 
+    // Formato básico de e-mail:
+    // alguma coisa @ alguma coisa . alguma coisa
+    const emailValido = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
+
     if (emailValor === '') {
+
         validarErro(email, 'Campo obrigatório');
         return false;
+
+    } else if (!emailValido.test(emailValor)) {
+
+        validarErro(email, 'Digite um e-mail válido');
+        return false;
+
     } else {
+
         validarSucesso(email);
         return true;
     }
@@ -159,20 +173,123 @@ function validarconfirmarSenha() {
 }
 
 function validarErro(input, mensagem) {
+
     const campo = input.parentElement;
     const small = campo.querySelector("small");
 
-    
     campo.className = "campo error";
+
+    if (small) {
+        small.textContent = mensagem;
+    }
 }
 
 function validarSucesso(input) {
+
     const campo = input.parentElement;
     const small = campo.querySelector("small");
 
     campo.className = "campo success";
+
+    if (small) {
+        small.textContent = "";
+    }
 }
 
+cpf.addEventListener("input", async function () {
+
+    let valor = cpf.value.replace(/\D/g, '');
+
+    valor = valor.substring(0, 11);
+
+    // Máscara
+    valor = valor.replace(/(\d{3})(\d)/, "$1.$2");
+    valor = valor.replace(/(\d{3})(\d)/, "$1.$2");
+    valor = valor.replace(/(\d{3})(\d{1,2})$/, "$1-$2");
+
+    cpf.value = valor;
+
+    const cpfLimpo = valor.replace(/\D/g, '');
+
+    // Enquanto estiver digitando
+    if (cpfLimpo.length < 11) {
+
+        cpfJaCadastrado = false;
+
+        if (cpfLimpo.length > 0) {
+            validarErro(cpf, 'Digite o CPF completo');
+        }
+
+        return;
+    }
+
+    // CPF válido → consulta o banco
+    try {
+
+        const resposta = await fetch(
+            `https://localhost:7229/usuario/verificar-cpf/${cpfLimpo}`
+        );
+
+        const dados = await resposta.json();
+
+        if (dados.existe) {
+
+            cpfJaCadastrado = true;
+
+            validarErro(
+                cpf,
+                'Este CPF já possui uma conta.'
+            );
+
+        } else {
+
+            cpfJaCadastrado = false;
+
+            validarSucesso(cpf);
+        }
+
+    } catch (erro) {
+
+        console.error("Erro ao verificar CPF:", erro);
+    }
+});
+cpf.addEventListener("input", verificarCpf);
+async function verificarCpf() {
+
+    let cpfValor = cpf.value.replace(/\D/g, '');
+
+    // Limpa a mensagem enquanto o CPF ainda não está completo
+    if (cpfValor.length < 11) {
+        cpfJaCadastrado = false;
+        return;
+    }
+
+    try {
+
+        const resposta = await fetch(
+            `https://localhost:7229/usuario/verificar-cpf/${cpfValor}`
+        );
+
+        const dados = await resposta.json();
+
+        if (dados.existe) {
+
+            cpfJaCadastrado = true;
+
+            validarErro(cpf, 'Este CPF já possui uma conta.');
+
+        } else {
+
+            cpfJaCadastrado = false;
+
+            validarSucesso(cpf);
+        }
+
+    } catch (erro) {
+
+        console.error("Erro ao verificar CPF:", erro);
+    }
+}
 
 //   form.addEventListener('submit', (event) => {
 //     event.preventDefault();
