@@ -9,8 +9,6 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/pages.css">
-    <script src="js/auth.js" defer></script>
-    <script src="js/login.js" defer></script>
 </head>
 
 <body class="kc-page">
@@ -18,13 +16,20 @@
         <h1>Que bom ter você aqui</h1>
         <p class="kc-intro">Entre para finalizar seu pedido e acompanhar suas encomendas.</p>
         <form id="login-form" class="kc-auth-card">
-            <p id="auth-message" class="kc-message" aria-live="polite"></p><label>E-mail<input name="email" type="email"
-                    required autocomplete="email"></label><label>Senha<input name="password" type="password" required
-                    autocomplete="current-password"></label><button class="kc-primary">Entrar</button>
+            <label>E-mail
+                <input id="email" name="email" type="email" required autocomplete="email">
+                <small></small>
+            </label>
+            <label>Senha
+                <input id="senha" name="password" type="password" required autocomplete="current-password">
+                <small></small>
+            </label>
+            <button class="kc-primary">Entrar</button>
             <p class="kc-auth-switch">Não possui cadastro? <a id="register-link" href="cadastro.html">Cadastre-se</a>
             </p>
         </form>
     </main>
+    <script src="js/login.js" defer></script>
     <script>document.querySelector('#register-link').href = `cadastro.html${location.search}`;</script>
 </body>
 
