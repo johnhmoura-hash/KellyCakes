@@ -1,10 +1,11 @@
 :root {
-    --cream: #fff6f1;
+      --cream: #fff6f1;
     --blush: #fde0e3;
-    --soft: #fff0ef;
+    --soft: #fdf5f5;
     --pink: #c94861;
     --wine: #b72e4a;
     --brown: #70412b;
+    --sand: #b89b8b;
     --wrap: 1100px;
 }
 
@@ -557,6 +558,31 @@ select:focus {
     white-space: nowrap;
     border: 0;
 }
+
+
+/* Campo de foto com erro */
+#foto-modelo.foto-erro {
+    border: 2px solid #dc3545 !important;
+    background-color: #fff0f0;
+    border-radius: 8px;
+}
+
+/* Mensagem de erro */
+#foto-modelo-ajuda.foto-ajuda-erro {
+    display: block;
+    margin-top: 8px;
+    padding: 10px 12px;
+
+    color: #b42318;
+    background-color: #fde7e7;
+
+    border: 1px solid #f1aeb5;
+    border-radius: 8px;
+
+    font-weight: 600;
+}
+
+
 
 @media (max-width:760px) {
     .mb-wrap {

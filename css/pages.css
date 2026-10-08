@@ -1,10 +1,11 @@
 :root {
-    --cream: #fff6f1;
+       --cream: #fff6f1;
     --blush: #fde0e3;
-    --soft: #fff0ef;
+    --soft: #fdf5f5;
     --pink: #c94861;
     --wine: #b72e4a;
     --brown: #70412b;
+    --sand: #b89b8b;
     --wrap: 1100px;
 }
 .kc-page {

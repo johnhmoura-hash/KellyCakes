@@ -1,7 +1,9 @@
 
 const floorOptions = document.querySelectorAll('input[name="andares"]');
 const floorFields = document.querySelectorAll('[data-floor]');
-
+const photoInput = document.querySelector('#foto-modelo');
+const photoPreview = document.querySelector('#foto-modelo-preview');
+const photoHelp = document.querySelector('#foto-modelo-ajuda');
 
 // ======================================================
 // CONTROLAR OS ANDARES
@@ -89,9 +91,7 @@ if (modelos[modelo]) {
 // FOTO DE REFERÊNCIA
 // ======================================================
 
-const photoInput = document.querySelector('#foto-modelo');
-const photoPreview = document.querySelector('#foto-modelo-preview');
-const photoHelp = document.querySelector('#foto-modelo-ajuda');
+
 
 photoInput.addEventListener('change', () => {
 
@@ -197,7 +197,7 @@ document.querySelector('#cake-form').addEventListener(
 
         // ==================================================
         // 3. MASSAS
-        // ==================================================
+        // =================================================
 
         const massas = [];
 
@@ -334,35 +334,85 @@ document.querySelector('#cake-form').addEventListener(
                 'Recheios',
                 idRecheio
             );
+            
+// ======================================================
+// FOTO DE REFERÊNCIA
+// ======================================================
+
+if (photoInput.files.length > 0) {
+
+    const arquivo = photoInput.files[0];
+
+    console.log('📷 Enviando foto:');
+    console.log('Nome:', arquivo.name);
+    console.log('Tamanho:', arquivo.size);
+    console.log('Tipo:', arquivo.type);
+
+    dados.append('ArquivoFoto', arquivo);
+}
+
+
 
         });
 
 
-        // ==================================================
-        // 10. FOTO
-        // ==================================================
+       
+// ======================================================
+// FOTO DE REFERÊNCIA
+// ======================================================
 
-        const foto = document.querySelector('#foto-modelo');
 
-        if (foto && foto.files.length > 0) {
+photoInput.addEventListener('change', () => {
 
-            dados.append(
-                'ArquivoFoto',
-                foto.files[0]
-            );
+    const file = photoInput.files[0];
 
-            console.log(
-                'Foto enviada:',
-                foto.files[0].name
-            );
+    console.log('📸 FOTO SELECIONADA');
+    console.log('Arquivo:', file);
 
-        } else {
+    // Nenhum arquivo selecionado
+    if (!file) {
+        photoPreview.hidden = true;
+        photoPreview.src = '';
+        return;
+    }
 
-            console.log(
-                'Nenhuma foto selecionada.'
-            );
+    // Limite de 1 MB
+    if (file.size > 1024 * 1024) {
 
-        }
+        alert(
+            'A imagem selecionada é muito grande.\n\n' +
+            'O tamanho máximo permitido é de 1 MB.'
+        );
+
+        photoHelp.textContent =
+            '⚠ Imagem muito grande! Escolha uma imagem de até 1 MB.';
+
+        photoInput.value = '';
+
+        photoPreview.hidden = true;
+        photoPreview.src = '';
+
+        return;
+    }
+
+    // Mostrar prévia
+    const reader = new FileReader();
+
+    reader.addEventListener('load', () => {
+
+        photoPreview.src = reader.result;
+        photoPreview.hidden = false;
+
+        photoHelp.textContent =
+            `Foto selecionada: ${file.name}`;
+
+    });
+
+    reader.readAsDataURL(file);
+});
+
+
+
 
 
         // ==================================================

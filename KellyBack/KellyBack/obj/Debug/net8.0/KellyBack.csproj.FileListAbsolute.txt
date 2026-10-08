@@ -137,7 +137,6 @@ C:\Jureildo\KellyCakes\KellyBack\KellyBack\obj\Debug\net8.0\staticwebassets.buil
 C:\Jureildo\KellyCakes\KellyBack\KellyBack\obj\Debug\net8.0\staticwebassets.build.json.cache
 C:\Jureildo\KellyCakes\KellyBack\KellyBack\obj\Debug\net8.0\staticwebassets.development.json
 C:\Jureildo\KellyCakes\KellyBack\KellyBack\obj\Debug\net8.0\staticwebassets.build.endpoints.json
-C:\Jureildo\KellyCakes\KellyBack\KellyBack\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
 C:\Jureildo\KellyCakes\KellyBack\KellyBack\obj\Debug\net8.0\KellyBack.csproj.Up2Date
 C:\Jureildo\KellyCakes\KellyBack\KellyBack\obj\Debug\net8.0\KellyBack.dll
 C:\Jureildo\KellyCakes\KellyBack\KellyBack\obj\Debug\net8.0\refint\KellyBack.dll

@@ -118,20 +118,30 @@ namespace KellyBack.Controllers
             });
         }
 
-        [HttpGet]
-        public IActionResult BuscaObjetoPerfil()
-        {
-            var bolo = _context.Bolos.ToList();
-
-            for (int i = 0; i < bolo.Count; i++)
+        
+            [HttpGet]
+            public IActionResult BuscaObjetoPerfil()
             {
+                var bolos = _context.Bolos.ToList();
 
-                var pastaBase = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/uploads");
-                var caminho = Path.Combine(pastaBase, bolo[i].FotoReferencia);
-                var nomeArquivo = Path.GetFileName(bolo[i].FotoReferencia);
-                bolo[i].FotoReferencia = $"{Request.Scheme}://{Request.Host}/uploads/{nomeArquivo}";
+                foreach (var bolo in bolos)
+                {
+                    if (!string.IsNullOrEmpty(bolo.FotoReferencia))
+                    {
+                        var nomeArquivo = Path.GetFileName(bolo.FotoReferencia);
+
+                        bolo.FotoReferencia =
+                            $"{Request.Scheme}://{Request.Host}/uploads/{nomeArquivo}";
+                    }
+                    else
+                    {
+                        bolo.FotoReferencia = null;
+                    }
+                }
+
+                return Ok(bolos);
             }
-            return Ok(bolo);
-        }
+
+
     }
 }
