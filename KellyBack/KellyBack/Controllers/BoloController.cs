@@ -2,6 +2,8 @@
 using KellyBack.DTOs;
 using KellyBack.Models;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http;
 
 namespace KellyBack.Controllers
 {
@@ -10,10 +12,13 @@ namespace KellyBack.Controllers
     public class BoloController: ControllerBase
     {
         private readonly DbKellyCakesContext _context;
+        private readonly IWebHostEnvironment _environment;
 
-        public BoloController(DbKellyCakesContext context)
+        public BoloController(DbKellyCakesContext context,
+    IWebHostEnvironment environment)
         {
             _context = context;
+            _environment = environment;
         }
 
         [HttpPost]
@@ -56,24 +61,63 @@ namespace KellyBack.Controllers
             };
 
             // Upload da foto
-            if (dados.ArquivoFoto != null)
+
+            // Upload da foto
+            if (dados.ArquivoFoto != null &&
+                dados.ArquivoFoto.Length > 0)
             {
+                const long tamanhoMaximo = 1 * 1024 * 1024;
+
+                if (dados.ArquivoFoto.Length > tamanhoMaximo)
+                {
+                    return BadRequest(
+                        "A imagem deve ter no máximo 1 MB."
+                    );
+                }
+
+                var extensoesPermitidas = new[]
+                {
+         ".jpg", ".jpeg", ".png", ".webp"
+     };
+
+                var extensao = Path.GetExtension(
+                    dados.ArquivoFoto.FileName
+                ).ToLowerInvariant();
+
+                if (!extensoesPermitidas.Contains(extensao))
+                {
+                    return BadRequest(
+                        "Formato inválido. Envie JPG, PNG ou WEBP."
+                    );
+                }
+
+                var pastaUploads = Path.Combine(
+    _environment.ContentRootPath,
+    "wwwroot",
+    "Uploads"
+);
+
+                Directory.CreateDirectory(pastaUploads);
+
                 var nomeArquivo =
-                    Guid.NewGuid().ToString() +
-                    Path.GetExtension(dados.ArquivoFoto.FileName);
+                    $"{Guid.NewGuid()}{extensao}";
 
                 var caminho = Path.Combine(
-                    "wwwroot/Uploads",
+                    pastaUploads,
                     nomeArquivo
                 );
 
-                using (var stream = new FileStream(caminho, FileMode.Create))
+                using (var stream = new FileStream(
+                    caminho,
+                    FileMode.CreateNew,
+                    FileAccess.Write))
                 {
                     await dados.ArquivoFoto.CopyToAsync(stream);
                 }
 
                 bolo.FotoReferencia = nomeArquivo;
             }
+
 
             // Salva o bolo primeiro
             _context.Bolos.Add(bolo);

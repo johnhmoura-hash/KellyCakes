@@ -92,52 +92,55 @@ if (modelos[modelo]) {
 // ======================================================
 
 
-
 photoInput.addEventListener('change', () => {
+    const arquivo = photoInput.files[0];
 
-    const file = photoInput.files[0];
+    photoPreview.hidden = true;
+    photoPreview.src = '';
 
-    // Nenhum arquivo selecionado
-    if (!file) {
-
-        photoPreview.hidden = true;
-        photoPreview.src = '';
-
+    if (!arquivo) {
+        photoHelp.textContent =
+            'Envie uma foto de até 1 MB.';
         return;
     }
 
+    const formatosPermitidos = [
+        'image/jpeg',
+        'image/png',
+        'image/webp'
+    ];
 
-    // Limite de 1 MB
-    if (file.size > 1024 * 1024) {
+    if (!formatosPermitidos.includes(arquivo.type)) {
+        alert('Selecione uma imagem JPG, PNG ou WEBP.');
+        photoInput.value = '';
+        photoHelp.textContent = 'Formato de imagem inválido.';
+        return;
+    }
 
-        photoHelp.textContent =
-            'Escolha uma imagem de até 1 MB.';
+    if (arquivo.size > 1024 * 1024) {
+        alert(
+            'A imagem selecionada é muito grande.\n\n' +
+            'O tamanho máximo permitido é de 1 MB.'
+        );
 
         photoInput.value = '';
-
-        photoPreview.hidden = true;
-        photoPreview.src = '';
-
+        photoHelp.textContent =
+            'Imagem muito grande! Escolha uma foto de até 1 MB.';
         return;
     }
 
+    const leitor = new FileReader();
 
-    // Mostrar prévia
-    const reader = new FileReader();
-
-    reader.addEventListener('load', () => {
-
-        photoPreview.src = reader.result;
+    leitor.addEventListener('load', () => {
+        photoPreview.src = leitor.result;
         photoPreview.hidden = false;
-
         photoHelp.textContent =
-            `Foto selecionada: ${file.name}`;
-
+            `Foto selecionada: ${arquivo.name}`;
     });
 
-    reader.readAsDataURL(file);
-
+    leitor.readAsDataURL(arquivo);
 });
+
 
 
 // ======================================================
@@ -322,9 +325,7 @@ document.querySelector('#cake-form').addEventListener(
                 'Massas',
                 idMassa
             );
-
         });
-
 
         // Recheios
 
@@ -334,86 +335,21 @@ document.querySelector('#cake-form').addEventListener(
                 'Recheios',
                 idRecheio
             );
-            
-// ======================================================
-// FOTO DE REFERÊNCIA
-// ======================================================
-
-if (photoInput.files.length > 0) {
-
-    const arquivo = photoInput.files[0];
-
-    console.log('📷 Enviando foto:');
-    console.log('Nome:', arquivo.name);
-    console.log('Tamanho:', arquivo.size);
-    console.log('Tipo:', arquivo.type);
-
-    dados.append('ArquivoFoto', arquivo);
-}
-
-
-
         });
+        // ======================================================
+        // FOTO DE REFERÊNCIA
+        // ======================================================
 
+        if (photoInput.files.length > 0) {
 
-       
-// ======================================================
-// FOTO DE REFERÊNCIA
-// ======================================================
+            const arquivo = photoInput.files[0];
 
-
-photoInput.addEventListener('change', () => {
-
-    const file = photoInput.files[0];
-
-    console.log('📸 FOTO SELECIONADA');
-    console.log('Arquivo:', file);
-
-    // Nenhum arquivo selecionado
-    if (!file) {
-        photoPreview.hidden = true;
-        photoPreview.src = '';
-        return;
-    }
-
-    // Limite de 1 MB
-    if (file.size > 1024 * 1024) {
-
-        alert(
-            'A imagem selecionada é muito grande.\n\n' +
-            'O tamanho máximo permitido é de 1 MB.'
-        );
-
-        photoHelp.textContent =
-            '⚠ Imagem muito grande! Escolha uma imagem de até 1 MB.';
-
-        photoInput.value = '';
-
-        photoPreview.hidden = true;
-        photoPreview.src = '';
-
-        return;
-    }
-
-    // Mostrar prévia
-    const reader = new FileReader();
-
-    reader.addEventListener('load', () => {
-
-        photoPreview.src = reader.result;
-        photoPreview.hidden = false;
-
-        photoHelp.textContent =
-            `Foto selecionada: ${file.name}`;
-
-    });
-
-    reader.readAsDataURL(file);
-});
-
-
-
-
+            console.log('📷 Enviando foto:');
+            console.log('Nome:', arquivo.name);
+            console.log('Tamanho:', arquivo.size);
+            console.log('Tipo:', arquivo.type);
+            dados.append('ArquivoFoto', arquivo);
+        }
 
         // ==================================================
         // 11. VER O QUE ESTÁ SENDO ENVIADO
@@ -452,6 +388,7 @@ photoInput.addEventListener('change', () => {
 
             const response = await fetch(
                 'https://localhost:7229/Bolo',
+
                 {
                     method: 'POST',
                     body: dados
@@ -488,20 +425,71 @@ photoInput.addEventListener('change', () => {
                 resultado
             );
 
-
-            // Guardar ID do bolo
-
+            // Guardar o ID criado no backend
             sessionStorage.setItem(
                 'kelly-bolo-id',
                 resultado.idBolo
             );
 
+            // Obter o texto selecionado em cada campo
+            const textoSelecionado = (nome) => {
+                const campo = document.querySelector(`[name="${nome}"]`);
+                return campo?.selectedOptions?.[0]?.textContent.trim() || '';
+            };
 
-            // Ir para resumo
+            // Montar os dados que serão exibidos no resumo
+            const escolha = {
+                idBolo: resultado.idBolo,
+                andares: String(andares),
+                preco: preco,
+                pesoTotal: pesoTotal,
+                cobertura: cobertura,
+                decoracao: decoracao,
+                observacao: observacao,
 
-            window.location.href =
-                'resumoBolo.html';
+                // Pesos e massas de cada andar
+                ...Object.fromEntries(
+                    Array.from({ length: andares }, (_, i) => {
+                        const andar = i + 1;
 
+                        return [
+                            [`peso-${andar}`, textoSelecionado(`peso-${andar}`)],
+                            [`massa-${andar}`, textoSelecionado(`massa-${andar}`)]
+                        ];
+                    }).flat()
+                ),
+
+                // Dois recheios por andar
+                ...Object.fromEntries(
+                    Array.from({ length: andares }, (_, i) => {
+                        const andar = i + 1;
+
+                        return [
+                            [`recheio-${andar}a`, textoSelecionado(`recheio-${andar}a`)],
+                            [`recheio-${andar}b`, textoSelecionado(`recheio-${andar}b`)]
+                        ];
+                    }).flat()
+                ),
+
+                // Foto de referência em prévia local
+                'foto-modelo': (
+                    photoPreview && !photoPreview.hidden
+                        ? photoPreview.src
+                        : ''
+                )
+            };
+
+            // Salvar para a tela de resumo
+            sessionStorage.setItem(
+                'kelly-cake-choice',
+                JSON.stringify(escolha)
+            );
+
+            console.log('Bolo criado:', resultado.idBolo);
+            console.log('Escolhas salvas:', sessionStorage.getItem('kelly-cake-choice'));
+            console.log('Indo para o resumo...');
+
+            window.location.replace('./resumoBolo.html');
         }
 
         catch (error) {
