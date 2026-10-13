@@ -263,3 +263,4 @@ C:\Jureildo\KellyCakes\KellyBack\KellyBack\bin\Debug\net8.0\zh-Hant\Microsoft.Co
 C:\Jureildo\KellyCakes\KellyBack\KellyBack\obj\Debug\net8.0\KellyBack.RazorAssemblyInfo.cache
 C:\Jureildo\KellyCakes\KellyBack\KellyBack\obj\Debug\net8.0\KellyBack.RazorAssemblyInfo.cs
 C:\Jureildo\KellyCakes\KellyBack\kellyBack\bin\Debug\net8.0\KellyBack.staticwebassets.runtime.json
+C:\Jureildo\KellyCakes\KellyBack\kellyBack\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
