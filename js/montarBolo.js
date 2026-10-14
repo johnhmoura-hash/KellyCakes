@@ -489,7 +489,7 @@ document.querySelector('#cake-form').addEventListener(
             console.log('Escolhas salvas:', sessionStorage.getItem('kelly-cake-choice'));
             console.log('Indo para o resumo...');
 
-            window.location.replace('./resumoBolo.html');
+            window.location.replace('resumoBolo.html');
         }
 
         catch (error) {

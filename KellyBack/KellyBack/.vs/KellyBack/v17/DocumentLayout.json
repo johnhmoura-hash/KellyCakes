@@ -3,8 +3,16 @@
   "WorkspaceRootPath": "C:\\Jureildo\\KellyCakes\\KellyBack\\KellyBack\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{DA31E020-9765-4F0F-9AEB-55704283B280}|KellyBack.csproj|c:\\jureildo\\kellycakes\\kellyback\\kellyback\\controllers\\pedidocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DA31E020-9765-4F0F-9AEB-55704283B280}|KellyBack.csproj|solutionrelative:controllers\\pedidocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{DA31E020-9765-4F0F-9AEB-55704283B280}|KellyBack.csproj|c:\\jureildo\\kellycakes\\kellyback\\kellyback\\controllers\\carrinhocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{DA31E020-9765-4F0F-9AEB-55704283B280}|KellyBack.csproj|solutionrelative:controllers\\carrinhocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DA31E020-9765-4F0F-9AEB-55704283B280}|KellyBack.csproj|c:\\jureildo\\kellycakes\\kellyback\\kellyback\\controllers\\usuariocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DA31E020-9765-4F0F-9AEB-55704283B280}|KellyBack.csproj|solutionrelative:controllers\\usuariocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{DA31E020-9765-4F0F-9AEB-55704283B280}|KellyBack.csproj|c:\\jureildo\\kellycakes\\kellyback\\kellyback\\controllers\\bolocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -15,20 +23,12 @@
       "RelativeMoniker": "D:0:0:{DA31E020-9765-4F0F-9AEB-55704283B280}|KellyBack.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DA31E020-9765-4F0F-9AEB-55704283B280}|KellyBack.csproj|c:\\jureildo\\kellycakes\\kellyback\\kellyback\\controllers\\usuariocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DA31E020-9765-4F0F-9AEB-55704283B280}|KellyBack.csproj|solutionrelative:controllers\\usuariocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{DA31E020-9765-4F0F-9AEB-55704283B280}|KellyBack.csproj|c:\\jureildo\\kellycakes\\kellyback\\kellyback\\models\\bolo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{DA31E020-9765-4F0F-9AEB-55704283B280}|KellyBack.csproj|solutionrelative:models\\bolo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{DA31E020-9765-4F0F-9AEB-55704283B280}|KellyBack.csproj|c:\\jureildo\\kellycakes\\kellyback\\kellyback\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
       "RelativeMoniker": "D:0:0:{DA31E020-9765-4F0F-9AEB-55704283B280}|KellyBack.csproj|solutionrelative:appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DA31E020-9765-4F0F-9AEB-55704283B280}|KellyBack.csproj|c:\\jureildo\\kellycakes\\kellyback\\kellyback\\controllers\\pedidocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DA31E020-9765-4F0F-9AEB-55704283B280}|KellyBack.csproj|solutionrelative:controllers\\pedidocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{DA31E020-9765-4F0F-9AEB-55704283B280}|KellyBack.csproj|c:\\jureildo\\kellycakes\\kellyback\\kellyback\\models\\usuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -58,48 +58,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Document",
               "DocumentIndex": 4,
-              "Title": "Bolo.cs",
-              "DocumentMoniker": "C:\\Jureildo\\KellyCakes\\KellyBack\\KellyBack\\Models\\Bolo.cs",
-              "RelativeDocumentMoniker": "Models\\Bolo.cs",
-              "ToolTip": "C:\\Jureildo\\KellyCakes\\KellyBack\\KellyBack\\Models\\Bolo.cs",
-              "RelativeToolTip": "Models\\Bolo.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-09-29T14:00:05.866Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "BoloController.cs",
-              "DocumentMoniker": "C:\\Jureildo\\KellyCakes\\KellyBack\\KellyBack\\Controllers\\BoloController.cs",
-              "RelativeDocumentMoniker": "Controllers\\BoloController.cs",
-              "ToolTip": "C:\\Jureildo\\KellyCakes\\KellyBack\\KellyBack\\Controllers\\BoloController.cs",
-              "RelativeToolTip": "Controllers\\BoloController.cs",
-              "ViewState": "AgIAAFAAAAAAAAAAAAAiwG0AAAAVAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-09-29T13:33:37.181Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "UsuarioController.cs",
-              "DocumentMoniker": "C:\\Jureildo\\KellyCakes\\KellyBack\\KellyBack\\Controllers\\UsuarioController.cs",
-              "RelativeDocumentMoniker": "Controllers\\UsuarioController.cs",
-              "ToolTip": "C:\\Jureildo\\KellyCakes\\KellyBack\\KellyBack\\Controllers\\UsuarioController.cs",
-              "RelativeToolTip": "Controllers\\UsuarioController.cs",
-              "ViewState": "AgIAAAwAAAAAAAAAAAAQwCsAAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-09-29T12:22:07.971Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Jureildo\\KellyCakes\\KellyBack\\KellyBack\\Program.cs",
               "RelativeDocumentMoniker": "Program.cs",
@@ -107,18 +70,17 @@
               "RelativeToolTip": "Program.cs",
               "ViewState": "AgIAAA8AAAAAAAAAAAAwwDgAAAAKAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-09-29T12:23:35.079Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-09-29T12:23:35.079Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "CarrinhoController.cs",
               "DocumentMoniker": "C:\\Jureildo\\KellyCakes\\KellyBack\\KellyBack\\Controllers\\CarrinhoController.cs",
               "RelativeDocumentMoniker": "Controllers\\CarrinhoController.cs",
               "ToolTip": "C:\\Jureildo\\KellyCakes\\KellyBack\\KellyBack\\Controllers\\CarrinhoController.cs",
               "RelativeToolTip": "Controllers\\CarrinhoController.cs",
-              "ViewState": "AgIAAFMAAAAAAAAAAAAYwHkAAAANAAAAAAAAAA==",
+              "ViewState": "AgIAAGAAAAAAAAAAAAA5wHAAAAAdAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-09-30T12:08:01.791Z",
               "EditorCaption": ""
@@ -137,19 +99,58 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 0,
               "Title": "PedidoController.cs",
               "DocumentMoniker": "C:\\Jureildo\\KellyCakes\\KellyBack\\KellyBack\\Controllers\\PedidoController.cs",
               "RelativeDocumentMoniker": "Controllers\\PedidoController.cs",
               "ToolTip": "C:\\Jureildo\\KellyCakes\\KellyBack\\KellyBack\\Controllers\\PedidoController.cs",
               "RelativeToolTip": "Controllers\\PedidoController.cs",
-              "ViewState": "AgIAAAsAAAAAAAAAAAAQwBEAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAEwAAAAAAAAAAAAwwFMAAAAHAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-09-30T12:50:04.562Z"
+              "WhenOpened": "2026-09-30T12:50:04.562Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "UsuarioController.cs",
+              "DocumentMoniker": "C:\\Jureildo\\KellyCakes\\KellyBack\\KellyBack\\Controllers\\UsuarioController.cs",
+              "RelativeDocumentMoniker": "Controllers\\UsuarioController.cs",
+              "ToolTip": "C:\\Jureildo\\KellyCakes\\KellyBack\\KellyBack\\Controllers\\UsuarioController.cs",
+              "RelativeToolTip": "Controllers\\UsuarioController.cs",
+              "ViewState": "AgIAAEIAAAAAAAAAAAAIwFcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-09-29T12:22:07.971Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "BoloController.cs",
+              "DocumentMoniker": "C:\\Jureildo\\KellyCakes\\KellyBack\\KellyBack\\Controllers\\BoloController.cs",
+              "RelativeDocumentMoniker": "Controllers\\BoloController.cs",
+              "ToolTip": "C:\\Jureildo\\KellyCakes\\KellyBack\\KellyBack\\Controllers\\BoloController.cs",
+              "RelativeToolTip": "Controllers\\BoloController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAG0AAAAVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-09-29T13:33:37.181Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 5,
+              "Title": "Bolo.cs",
+              "DocumentMoniker": "C:\\Jureildo\\KellyCakes\\KellyBack\\KellyBack\\Models\\Bolo.cs",
+              "RelativeDocumentMoniker": "Models\\Bolo.cs",
+              "ToolTip": "C:\\Jureildo\\KellyCakes\\KellyBack\\KellyBack\\Models\\Bolo.cs",
+              "RelativeToolTip": "Models\\Bolo.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-09-29T14:00:05.866Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
               "Title": "appsettings.json",
               "DocumentMoniker": "C:\\Jureildo\\KellyCakes\\KellyBack\\KellyBack\\appsettings.json",
               "RelativeDocumentMoniker": "appsettings.json",

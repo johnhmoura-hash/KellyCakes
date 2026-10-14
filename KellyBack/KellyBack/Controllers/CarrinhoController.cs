@@ -147,6 +147,43 @@ namespace KellyBack.Controllers
                 total
             });
         }
-        
+
+
+        [HttpDelete("remover/{idItemCarrinho}")]
+        public async Task<IActionResult> RemoverItem(int idItemCarrinho)
+        {
+            var usuario = HttpContext.Session.GetString("Idusado");
+
+            if (string.IsNullOrEmpty(usuario) ||
+                !int.TryParse(usuario, out int idUsuario))
+            {
+                return Unauthorized("É necessário estar logado.");
+            }
+
+            var carrinho = await _context.Carrinhos
+                .FirstOrDefaultAsync(c =>
+                    c.FkUsuarioIdUsuario == idUsuario);
+
+            if (carrinho == null)
+                return NotFound("Carrinho não encontrado.");
+
+            var item = await _context.ItemCarrinhos
+                .FirstOrDefaultAsync(i =>
+                    i.IdItemCarrinho == idItemCarrinho &&
+                    i.FkCarrinhoIdCarrinho == carrinho.IdCarrinho);
+
+            if (item == null)
+                return NotFound("Item não encontrado no seu carrinho.");
+
+            _context.ItemCarrinhos.Remove(item);
+            await _context.SaveChangesAsync();
+
+            return Ok(new
+            {
+                mensagem = "Item removido do carrinho."
+            });
+        }
+kuuuu
+
     }
 }
