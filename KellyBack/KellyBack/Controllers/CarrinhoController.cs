@@ -183,7 +183,6 @@ namespace KellyBack.Controllers
                 mensagem = "Item removido do carrinho."
             });
         }
-kuuuu
 
     }
 }

@@ -1,0 +1,58 @@
+﻿@model KellyBack.Models.Cartao
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Cartao</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="NumCartao" class="control-label"></label>
+                <input asp-for="NumCartao" class="form-control" />
+                <span asp-validation-for="NumCartao" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DtaVencimento" class="control-label"></label>
+                <input asp-for="DtaVencimento" class="form-control" />
+                <span asp-validation-for="DtaVencimento" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Codigo" class="control-label"></label>
+                <input asp-for="Codigo" class="form-control" />
+                <span asp-validation-for="Codigo" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="NomeCartao" class="control-label"></label>
+                <input asp-for="NomeCartao" class="form-control" />
+                <span asp-validation-for="NomeCartao" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="FkUsuarioIdUsuario" class="control-label"></label>
+                <input asp-for="FkUsuarioIdUsuario" class="form-control" />
+                <span asp-validation-for="FkUsuarioIdUsuario" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Bandeira" class="control-label"></label>
+                <input asp-for="Bandeira" class="form-control" />
+                <span asp-validation-for="Bandeira" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

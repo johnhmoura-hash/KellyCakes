@@ -140,6 +140,29 @@
         }
       }
     },
+    "/Carrinho/remover/{idItemCarrinho}": {
+      "delete": {
+        "tags": [
+          "Carrinho"
+        ],
+        "parameters": [
+          {
+            "name": "idItemCarrinho",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/Pedido/finalizar": {
       "post": {
         "tags": [

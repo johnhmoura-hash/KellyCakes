@@ -22,7 +22,7 @@
         <section class="mb-hero">
             <div class="mb-wrap mb-hero-content">
                 <h1>CONFIRMAR PAGAMENTO</h1>
-                <p>revise seus dados, escolha uma forma de pagamento e finalize seu pedido.</p>
+                <p>Revise seus dados, escolha uma forma de pagamento e finalize seu pedido.</p>
             </div>
         </section>
 
@@ -60,37 +60,33 @@
             </div>
 
 
-            <!-- DADOS DO CLIENTE -->
+            
+<!-- DADOS DO CLIENTE -->
+<section class="pagamento-secao">
+    <h2>1. Dados do cliente</h2>
 
-            <section class="pagamento-secao">
-                <h2>
-                    1. Dados do cliente
-                </h2>
-                <div class="cliente-card">
-                    <div class="cliente-icones">
-                        <i class="bi bi-person"></i>
-                        <i class="bi bi-envelope"></i>
-                        <i class="bi bi-telephone"></i>
-                    </div>
+    <div class="cliente-card">
+        <div class="cliente-icones">
+            <i class="bi bi-person"></i>
+            <i class="bi bi-envelope"></i>
+            <i class="bi bi-telephone"></i>
+        </div>
 
+        <div class="cliente-dados">
+            <strong id="cliente-nome">Carregando...</strong>
+            <span id="cliente-email"></span>
+            <span id="cliente-telefone"></span>
+        </div>
 
-                    <div class="cliente-dados">
-                        <strong>
-                            Maria do Bairro
-                        </strong>
-                        <span>
-                            MariaBairro@gmail.com
-                        </span>
-                        <span>
-                            (79) 92222-4444
-                        </span>
-                    </div>
-                    <button class="btn-editar" type="button">
-                        Editar
-                    </button>
-                </div>
-            </section>
+        <button class="btn-editar" type="button"
+                onclick="location.href='perfil.html'">
+            Editar
+        </button>
+    </div>
+</section>
 
+<!-- LOCAL ONDE APARECEM OS CAMPOS DE PAGAMENTO -->
+<div id="payment-extra"></div>
 
             <!-- PAGAMENTO -->
 
@@ -146,6 +142,7 @@
                             </small>
                         </div>
                     </label>
+                    <div id="payment-extra"></div>
                 </div>
             </section>
 
@@ -181,7 +178,13 @@
         });
 
     </script>
-    <script src="js/header.js"></script>
+    
+<script src="js/auth.js"></script>
+<script src="js/header.js"></script>
+<script src="js/dados-cliente.js"></script>
+<script src="js/confirmar-pedido.js"></script>
+</body>
+
 </body>
 
 </html>

@@ -190,14 +190,13 @@
       itemArea.innerHTML = `
                 <p class="kc-cart-empty">
                     Seu carrinho ainda está vazio.
-                    <a href="login.html">Fazer pedido</a>
                 </p>
             `;
     } else {
       itemArea.innerHTML = itensCarrinho.map(item => {
         const foto = item.image || item.fotoReferencia || item.foto || '';
 
-        const image = foto
+        const imagem = foto
           ? `<img src="${foto.startsWith('http') ? foto : `https://localhost:7229/${foto.replace(/^\/+/, '')}`}"
          alt="Foto de referência do bolo"
          onerror="this.style.display='none'">`

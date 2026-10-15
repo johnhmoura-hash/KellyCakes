@@ -7,3 +7,6 @@ wwwroot\Uploads\5627d962-13a1-4908-84e4-f8671eb3c1df.png
 wwwroot\Uploads\e4811691-6188-4030-86e2-45a633e2dbea.png
 wwwroot\Uploads\14281336-f9fe-4e93-b8bc-304d5425ed61.png
 wwwroot\Uploads\27681bc9-1c9b-405b-88cf-cb04c34d7bc5.png
+wwwroot\Uploads\0693b1c6-8460-437c-ab00-825dd22d7836.png
+wwwroot\Uploads\d335aab5-b1fb-4b88-853c-7f20a9b55ac7.png
+wwwroot\Uploads\afda624d-b358-40eb-8e63-94ee33925718.png

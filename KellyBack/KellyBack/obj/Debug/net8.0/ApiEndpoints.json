@@ -92,6 +92,22 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "KellyBack.Controllers.CarrinhoController",
+    "Method": "RemoverItem",
+    "RelativePath": "Carrinho/remover/{idItemCarrinho}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "idItemCarrinho",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "KellyBack.Controllers.PedidoController",
     "Method": "FinalizarPedido",
     "RelativePath": "Pedido/finalizar",
