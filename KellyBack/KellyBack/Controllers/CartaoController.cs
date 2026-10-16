@@ -37,7 +37,7 @@ namespace KellyBack.Controllers
                 .Where(c => c.FkUsuarioIdUsuario == idUsuario)
                 .Select(c => new
                 {
-                    id = c.Id,
+                    id = c.Id_cartao,
                     bandeira = c.Bandeira,
                     nomeCartao = c.NomeCartao,
                     ultimos4 = c.NumCartao.Length >= 4
@@ -66,7 +66,7 @@ namespace KellyBack.Controllers
             }
 
             // Nunca confiar no ID do usuário enviado pelo navegador.
-            cartao.Id = 0;
+            cartao.Id_cartao = 0;
             cartao.FkUsuarioIdUsuario = idUsuario;
 
             // Não armazenar o CVV.
@@ -79,7 +79,7 @@ namespace KellyBack.Controllers
 
             return Ok(new
             {
-                id = cartao.Id,
+                id = cartao.Id_cartao,
                 bandeira = cartao.Bandeira,
                 nomeCartao = cartao.NomeCartao,
                 ultimos4 = numero.Length >= 4

@@ -163,6 +163,49 @@
         }
       }
     },
+    "/api/cartoes/meus-cartoes": {
+      "get": {
+        "tags": [
+          "CartoesApi"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/cartoes/cadastrar": {
+      "post": {
+        "tags": [
+          "CartoesApi"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Cartao"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Cartao"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Cartao"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/Pedido/finalizar": {
       "post": {
         "tags": [
@@ -184,6 +227,18 @@
               "format": "int32"
             }
           }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/Pedido/ultimo": {
+      "get": {
+        "tags": [
+          "Pedido"
         ],
         "responses": {
           "200": {
@@ -484,7 +539,7 @@
             "type": "string",
             "nullable": true
           },
-          "id": {
+          "id_cartao": {
             "type": "integer",
             "format": "int32"
           },

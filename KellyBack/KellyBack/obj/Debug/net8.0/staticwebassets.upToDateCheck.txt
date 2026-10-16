@@ -10,3 +10,5 @@ wwwroot\Uploads\27681bc9-1c9b-405b-88cf-cb04c34d7bc5.png
 wwwroot\Uploads\0693b1c6-8460-437c-ab00-825dd22d7836.png
 wwwroot\Uploads\d335aab5-b1fb-4b88-853c-7f20a9b55ac7.png
 wwwroot\Uploads\afda624d-b358-40eb-8e63-94ee33925718.png
+wwwroot\Uploads\ed624f5a-d18f-443e-b8d2-3ad407ca6283.png
+wwwroot\Uploads\5cd9b9ef-fa3f-4137-a20b-22d9578c9996.png

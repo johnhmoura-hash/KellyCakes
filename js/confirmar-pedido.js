@@ -17,13 +17,13 @@
     // 2. PREENCHER DADOS DO CLIENTE
     // =====================================================
 
-    document.querySelector('[data-client-name]').textContent =
+    document.querySelector('#cliente-nome').textContent =
         user.name || user.nome || '';
 
-    document.querySelector('[data-client-email]').textContent =
+    document.querySelector('#cliente-email').textContent =
         user.email || user.Email || '';
 
-    document.querySelector('[data-client-phone]').textContent =
+    document.querySelector('#cliente-telefone').textContent =
         user.phone || user.telefone || 'Telefone não informado';
 
     const extra = document.querySelector('#payment-extra');
@@ -52,9 +52,8 @@
                     <h3>Escolha um cartão</h3>
 
                     <div class="saved-cards">
-                        ${
-                            cartoes.length
-                                ? cartoes.map((cartao, index) => `
+                        ${cartoes.length
+                    ? cartoes.map((cartao, index) => `
                                     <label class="saved-card-option">
                                         <input
                                             type="radio"
@@ -70,8 +69,8 @@
                                         </span>
                                     </label>
                                 `).join('')
-                                : '<p>Você ainda não tem cartões cadastrados.</p>'
-                        }
+                    : '<p>Você ainda não tem cartões cadastrados.</p>'
+                }
                     </div>
 
                     <button type="button" id="btn-novo-cartao"
@@ -156,7 +155,7 @@
                     NumCartao: numero,
                     Bandeira: bandeira,
                     DtaVencimento: `20${ano}-${mes}-01`,
-                    Codigo: ''
+                    Codigo:null
                 };
 
                 try {
@@ -254,11 +253,20 @@
 
     document.querySelector('.btn-continuar')
         .addEventListener('click', async () => {
-            const cart = JSON.parse(
-                sessionStorage.getItem('kelly-cakes-cart') || '[]'
-            );
 
-            if (!cart.length) {
+            const respostaCarrinho = await fetch(`${API}/Carrinho`, {
+                method: 'GET',
+                credentials: 'include'
+            });
+
+            if (!respostaCarrinho.ok) {
+                throw new Error('Não foi possível consultar o carrinho.');
+            }
+
+            const carrinho = await respostaCarrinho.json();
+            const itens = carrinho.items ?? carrinho.itens ?? [];
+
+            if (!itens.length) {
                 alert('Seu carrinho está vazio.');
                 location.href = 'catalogo.html';
                 return;

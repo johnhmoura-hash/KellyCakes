@@ -138,13 +138,13 @@ public partial class DbKellyCakesContext : DbContext
 
         modelBuilder.Entity<Cartao>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__cartao__3213E83FDAFA0FA2");
+            entity.HasKey(e => e.Id_cartao).HasName("PK__cartao__3213E83FDAFA0FA2");
 
             entity.ToTable("cartao");
 
             entity.HasIndex(e => new { e.NumCartao, e.Codigo }, "UQ__cartao__82CF3CC81F6C845F").IsUnique();
 
-            entity.Property(e => e.Id).HasColumnName("id");
+            entity.Property(e => e.Id_cartao).HasColumnName("id_cartao");
             entity.Property(e => e.Bandeira)
                 .HasMaxLength(30)
                 .IsUnicode(false)

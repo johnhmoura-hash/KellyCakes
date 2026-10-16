@@ -13,7 +13,7 @@ public partial class Cartao
 
     public string? NomeCartao { get; set; }
 
-    public int Id { get; set; }
+    public int Id_cartao { get; set; }
 
     public int? FkUsuarioIdUsuario { get; set; }
 

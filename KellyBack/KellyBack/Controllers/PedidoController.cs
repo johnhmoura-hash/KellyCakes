@@ -43,7 +43,7 @@ namespace KellyBack.Controllers
                 // Verifica se o cartão pertence ao usuário
                 var cartao = await _context.Cartaos
                     .FirstOrDefaultAsync(c =>
-                        c.Id == idCartao &&
+                        c.Id_cartao == idCartao &&
                         c.FkUsuarioIdUsuario == idUsuario);
 
                 if (cartao == null)
@@ -125,6 +125,76 @@ namespace KellyBack.Controllers
                 data = pedido.DataPedido,
                 formaPagamento = pedido.FormaPagamento,
                 idCartao = pedido.FkCartaoIdCartao
+            });
+        }
+
+        [HttpGet("ultimo")]
+        public async Task<IActionResult> ObterUltimoPedido()
+        {
+            // Recupera o ID do usuário pela sessão
+            var idUsuario = HttpContext.Session.GetInt32("Idusado");
+
+            if (idUsuario == null)
+            {
+                return Unauthorized(new
+                {
+                    mensagem = "Você precisa estar logado para consultar seu pedido."
+                });
+            }
+
+            // Busca o pedido mais recente do usuário, incluindo os bolos
+            var pedido = await _context.Pedidos
+                .Where(p => p.FkUsuarioIdUsuario == idUsuario.Value)
+                .Include(p => p.ItemPedidos)
+                    .ThenInclude(i => i.FkBoloIdBoloNavigation)
+                .OrderByDescending(p => p.DataPedido)
+                .ThenByDescending(p => p.IdPedido)
+                .FirstOrDefaultAsync();
+
+            if (pedido == null)
+            {
+                return NotFound(new
+                {
+                    mensagem = "Nenhum pedido foi encontrado."
+                });
+            }
+
+            // Monta a lista de itens do pedido
+            var itens = pedido.ItemPedidos.Select(item =>
+            {
+                var bolo = item.FkBoloIdBoloNavigation;
+
+                var precoUnitario = item.PrecoUnitario;
+                var quantidade = item.Quantidade;
+
+                return new
+                {
+                    idBolo = item.FkBoloIdBolo,
+                    nome = "Bolo personalizado",
+                    preco = precoUnitario,
+                    quantidade = quantidade,
+                    subtotal = precoUnitario * quantidade,
+                    peso = bolo?.Peso,
+                    tipoCobertura = bolo?.TipoCobertura,
+                    decoracao = bolo?.Decoracao,
+                    fotoReferencia = bolo?.FotoReferencia,
+                    observacao = bolo?.Observacao
+                };
+            }).ToList();
+
+            // Calcula o valor total do pedido
+            var total = itens.Sum(item => item.subtotal);
+
+            // Retorna os dados para o resumo do pedido
+            return Ok(new
+            {
+                idPedido = pedido.IdPedido,
+                statusPedido = pedido.StatusPedido,
+                dataPedido = pedido.DataPedido,
+                formaPagamento = pedido.FormaPagamento,
+                idCartao = pedido.FkCartaoIdCartao,
+                itens = itens,
+                total = total
             });
         }
     }

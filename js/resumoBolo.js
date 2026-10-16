@@ -347,9 +347,20 @@ if (!choice) {
         if (!response.ok) {
             const erro = await response.text();
 
-            if (response.status === 401) {
-                cartMessage.textContent =
-                    'Faça login para adicionar o bolo ao carrinho.';
+             if (response.status === 401) {
+            cartMessage.textContent =
+                'Faça login para adicionar o bolo ao carrinho. Você será redirecionado para a página de login...';
+
+            cartMessage.style.color = '#c94861';
+
+            // Guarda a página atual para retornar após o login.
+            const paginaAtual =
+                location.pathname.split('/').pop() + location.search + location.hash;
+
+            setTimeout(() => {
+                location.href =
+                    `login.html?next=${encodeURIComponent(paginaAtual)}`;
+            }, 2000);
             } else if (response.status === 404) {
                 cartMessage.textContent =
                     'O bolo não foi encontrado no banco de dados.';

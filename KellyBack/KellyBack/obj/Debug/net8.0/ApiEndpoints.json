@@ -1,5 +1,31 @@
 [
   {
+    "ContainingType": "KellyBack.Controllers.CartoesApiController",
+    "Method": "Cadastrar",
+    "RelativePath": "api/cartoes/cadastrar",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "cartao",
+        "Type": "KellyBack.Models.Cartao",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "KellyBack.Controllers.CartoesApiController",
+    "Method": "MeusCartoes",
+    "RelativePath": "api/cartoes/meus-cartoes",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "KellyBack.Controllers.BoloController",
     "Method": "CriarObjeto",
     "RelativePath": "Bolo",
@@ -126,6 +152,16 @@
         "IsRequired": false
       }
     ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "KellyBack.Controllers.PedidoController",
+    "Method": "ObterUltimoPedido",
+    "RelativePath": "Pedido/ultimo",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
     "ReturnTypes": []
   },
   {
