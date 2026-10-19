@@ -235,6 +235,18 @@
         }
       }
     },
+    "/Pedido/historico": {
+      "get": {
+        "tags": [
+          "Pedido"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/Pedido/ultimo": {
       "get": {
         "tags": [

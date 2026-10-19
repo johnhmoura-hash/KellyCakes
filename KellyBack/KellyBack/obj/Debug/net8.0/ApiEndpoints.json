@@ -156,6 +156,16 @@
   },
   {
     "ContainingType": "KellyBack.Controllers.PedidoController",
+    "Method": "ObterHistorico",
+    "RelativePath": "Pedido/historico",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "KellyBack.Controllers.PedidoController",
     "Method": "ObterUltimoPedido",
     "RelativePath": "Pedido/ultimo",
     "HttpMethod": "GET",

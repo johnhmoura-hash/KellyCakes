@@ -73,12 +73,6 @@
     // =====================================================
 
     async function carregarResumo() {
-        const user = window.KellyAuth?.getUser();
-
-        if (!user) {
-            location.replace('login.html?next=resumoPedido.html');
-            return;
-        }
 
         summary.innerHTML = '<p>Carregando os dados do pedido...</p>';
 

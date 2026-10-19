@@ -155,7 +155,7 @@
                     NumCartao: numero,
                     Bandeira: bandeira,
                     DtaVencimento: `20${ano}-${mes}-01`,
-                    Codigo:null
+                    Codigo: null
                 };
 
                 try {
@@ -328,6 +328,43 @@
                 // O backend deve retornar os dados do pedido para
                 // a tela de resumo/histórico.
                 location.href = 'resumoPedido.html';
+
+
+                if (resposta.status === 401) {
+                    alert('Sua sessão expirou. Entre novamente para continuar.');
+
+                    location.replace(
+                        'login.html?next=' +
+                        encodeURIComponent('confirmarBolo.html')
+                    );
+
+                    return;
+                }
+
+                if (!resposta.ok) {
+                    const mensagem = await resposta.text();
+                    throw new Error(mensagem || 'Não foi possível finalizar o pedido.');
+                }
+
+                const pedido = await resposta.json();
+
+                if (pedido.formaPagamento === 'pix') {
+                    alert(
+                        'Pedido demonstrativo criado! ' +
+                        'Consulte o código Pix fictício no histórico.'
+                    );
+                } else if (pedido.formaPagamento === 'boleto') {
+                    alert(
+                        'Pedido demonstrativo criado! ' +
+                        'Baixe o boleto em PDF no histórico.'
+                    );
+                } else {
+                    alert('Pedido finalizado com sucesso!');
+                }
+
+                // Os dados e o pagamento serão carregados do SQL Server.
+                location.href = 'historicoPedidos.html';
+
 
             } catch (erro) {
                 console.error(erro);

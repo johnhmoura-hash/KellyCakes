@@ -3,20 +3,24 @@
   "WorkspaceRootPath": "C:\\Jureildo\\KellyCakes\\KellyBack\\KellyBack\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{DA31E020-9765-4F0F-9AEB-55704283B280}|KellyBack.csproj|c:\\jureildo\\kellycakes\\kellyback\\kellyback\\controllers\\pedidocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DA31E020-9765-4F0F-9AEB-55704283B280}|KellyBack.csproj|solutionrelative:controllers\\pedidocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{DA31E020-9765-4F0F-9AEB-55704283B280}|KellyBack.csproj|c:\\jureildo\\kellycakes\\kellyback\\kellyback\\models\\cartao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DA31E020-9765-4F0F-9AEB-55704283B280}|KellyBack.csproj|solutionrelative:models\\cartao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{DA31E020-9765-4F0F-9AEB-55704283B280}|KellyBack.csproj|c:\\jureildo\\kellycakes\\kellyback\\kellyback\\controllers\\cartaocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{DA31E020-9765-4F0F-9AEB-55704283B280}|KellyBack.csproj|solutionrelative:controllers\\cartaocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DA31E020-9765-4F0F-9AEB-55704283B280}|KellyBack.csproj|c:\\jureildo\\kellycakes\\kellyback\\kellyback\\models\\cartao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DA31E020-9765-4F0F-9AEB-55704283B280}|KellyBack.csproj|solutionrelative:models\\cartao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{DA31E020-9765-4F0F-9AEB-55704283B280}|KellyBack.csproj|c:\\jureildo\\kellycakes\\kellyback\\kellyback\\data\\dbkellycakescontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{DA31E020-9765-4F0F-9AEB-55704283B280}|KellyBack.csproj|solutionrelative:data\\dbkellycakescontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DA31E020-9765-4F0F-9AEB-55704283B280}|KellyBack.csproj|c:\\jureildo\\kellycakes\\kellyback\\kellyback\\controllers\\pedidocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DA31E020-9765-4F0F-9AEB-55704283B280}|KellyBack.csproj|solutionrelative:controllers\\pedidocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DA31E020-9765-4F0F-9AEB-55704283B280}|KellyBack.csproj|c:\\jureildo\\kellycakes\\kellyback\\kellyback\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DA31E020-9765-4F0F-9AEB-55704283B280}|KellyBack.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{DA31E020-9765-4F0F-9AEB-55704283B280}|KellyBack.csproj|c:\\jureildo\\kellycakes\\kellyback\\kellyback\\views\\cartao\\delete.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
@@ -33,10 +37,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{DA31E020-9765-4F0F-9AEB-55704283B280}|KellyBack.csproj|c:\\jureildo\\kellycakes\\kellyback\\kellyback\\controllers\\carrinhocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{DA31E020-9765-4F0F-9AEB-55704283B280}|KellyBack.csproj|solutionrelative:controllers\\carrinhocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DA31E020-9765-4F0F-9AEB-55704283B280}|KellyBack.csproj|c:\\jureildo\\kellycakes\\kellyback\\kellyback\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DA31E020-9765-4F0F-9AEB-55704283B280}|KellyBack.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{DA31E020-9765-4F0F-9AEB-55704283B280}|KellyBack.csproj|c:\\jureildo\\kellycakes\\kellyback\\kellyback\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
@@ -78,24 +78,24 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 3,
               "Title": "PedidoController.cs",
               "DocumentMoniker": "C:\\Jureildo\\KellyCakes\\KellyBack\\KellyBack\\Controllers\\PedidoController.cs",
               "RelativeDocumentMoniker": "Controllers\\PedidoController.cs",
               "ToolTip": "C:\\Jureildo\\KellyCakes\\KellyBack\\KellyBack\\Controllers\\PedidoController.cs",
               "RelativeToolTip": "Controllers\\PedidoController.cs",
-              "ViewState": "AgIAAJkAAAAAAAAAAAAwwJUAAAAIAAAAAAAAAA==",
+              "ViewState": "AgIAAEsBAAAAAAAAAAAAAIkBAAATAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-09-30T12:50:04.562Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 2,
               "Title": "DbKellyCakesContext.cs",
               "DocumentMoniker": "C:\\Jureildo\\KellyCakes\\KellyBack\\KellyBack\\Data\\DbKellyCakesContext.cs",
               "RelativeDocumentMoniker": "Data\\DbKellyCakesContext.cs",
@@ -121,7 +121,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 0,
               "Title": "Cartao.cs",
               "DocumentMoniker": "C:\\Jureildo\\KellyCakes\\KellyBack\\KellyBack\\Models\\Cartao.cs",
               "RelativeDocumentMoniker": "Models\\Cartao.cs",
@@ -134,7 +134,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 4,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Jureildo\\KellyCakes\\KellyBack\\KellyBack\\Program.cs",
               "RelativeDocumentMoniker": "Program.cs",
@@ -142,7 +142,8 @@
               "RelativeToolTip": "Program.cs",
               "ViewState": "AgIAAA8AAAAAAAAAAAAwwDgAAAAKAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-09-29T12:23:35.079Z"
+              "WhenOpened": "2026-09-29T12:23:35.079Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -158,7 +159,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 7,
               "Title": "Index.cshtml",
               "DocumentMoniker": "C:\\Jureildo\\KellyCakes\\KellyBack\\KellyBack\\Views\\Cartao\\Index.cshtml",
               "RelativeDocumentMoniker": "Views\\Cartao\\Index.cshtml",
@@ -170,7 +171,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 6,
               "Title": "Details.cshtml",
               "DocumentMoniker": "C:\\Jureildo\\KellyCakes\\KellyBack\\KellyBack\\Views\\Cartao\\Details.cshtml",
               "RelativeDocumentMoniker": "Views\\Cartao\\Details.cshtml",
@@ -182,7 +183,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "Delete.cshtml",
               "DocumentMoniker": "C:\\Jureildo\\KellyCakes\\KellyBack\\KellyBack\\Views\\Cartao\\Delete.cshtml",
               "RelativeDocumentMoniker": "Views\\Cartao\\Delete.cshtml",
@@ -194,7 +195,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 8,
               "Title": "CarrinhoController.cs",
               "DocumentMoniker": "C:\\Jureildo\\KellyCakes\\KellyBack\\KellyBack\\Controllers\\CarrinhoController.cs",
               "RelativeDocumentMoniker": "Controllers\\CarrinhoController.cs",
