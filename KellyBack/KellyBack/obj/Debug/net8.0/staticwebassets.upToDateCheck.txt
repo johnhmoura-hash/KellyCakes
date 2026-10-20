@@ -18,3 +18,7 @@ wwwroot\Uploads\20ab29cf-386d-4ef6-92af-bd9f44467bd6.png
 wwwroot\Uploads\21336718-3f85-453a-9b8f-bc291f66cae9.png
 wwwroot\Uploads\01abd817-071f-4a17-b970-40e1748a993f.png
 wwwroot\Uploads\c4b33eba-0ffc-4b3d-b45d-bce36bed3da8.png
+wwwroot\Uploads\6e72a3a4-56b9-4b38-beb3-1e2c1a8726fb.png
+wwwroot\Uploads\6b269561-71b9-4364-8c93-6efdb8e176e5.png
+wwwroot\Uploads\f022a61a-5d3c-4095-b33f-06fc98e48821.png
+wwwroot\Uploads\fb1bae69-f806-4e85-a3d9-d54f8a65fb0b.png

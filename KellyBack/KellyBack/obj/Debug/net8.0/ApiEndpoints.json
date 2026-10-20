@@ -135,6 +135,22 @@
   },
   {
     "ContainingType": "KellyBack.Controllers.PedidoController",
+    "Method": "BaixarBoletoDemonstrativo",
+    "RelativePath": "Pedido/{id}/boleto.pdf",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "KellyBack.Controllers.PedidoController",
     "Method": "FinalizarPedido",
     "RelativePath": "Pedido/finalizar",
     "HttpMethod": "POST",
