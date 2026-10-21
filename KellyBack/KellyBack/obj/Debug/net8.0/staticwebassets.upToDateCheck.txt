@@ -22,3 +22,8 @@ wwwroot\Uploads\6e72a3a4-56b9-4b38-beb3-1e2c1a8726fb.png
 wwwroot\Uploads\6b269561-71b9-4364-8c93-6efdb8e176e5.png
 wwwroot\Uploads\f022a61a-5d3c-4095-b33f-06fc98e48821.png
 wwwroot\Uploads\fb1bae69-f806-4e85-a3d9-d54f8a65fb0b.png
+wwwroot\Uploads\bd41146b-1acb-4fb8-8e47-9247515f2eb7.png
+wwwroot\Uploads\54878f48-9dd4-4dd7-a14f-c18734889e89.png
+wwwroot\Uploads\7daa2cd3-ddf2-4dac-88d2-625b4a70f7f1.png
+wwwroot\Uploads\167dad03-6fa3-42fd-ba67-b09e898c9f4c.png
+wwwroot\Uploads\1712638c-013f-42d4-90da-50be8f394e79.png

@@ -194,13 +194,45 @@
             `;
     } else {
       itemArea.innerHTML = itensCarrinho.map(item => {
-        const foto = item.image || item.fotoReferencia || item.foto || '';
+       const foto = String(
+  item.image ||
+  item.fotoReferencia ||
+  item.foto ||
+  ''
+).trim();
 
-        const imagem = foto
-          ? `<img src="${foto.startsWith('http') ? foto : `https://localhost:7229/${foto.replace(/^\/+/, '')}`}"
-         alt="Foto de referência do bolo"
-         onerror="this.style.display='none'">`
-          : '';
+function montarUrlFoto(caminho) {
+  if (!caminho) return '';
+
+  // Se o backend já retornou uma URL completa.
+  if (/^https?:\/\//i.test(caminho)) {
+    return caminho;
+  }
+
+  // Remove barras iniciais e possíveis referências a wwwroot.
+  caminho = caminho
+    .replace(/\\/g, '/')
+    .replace(/^\/+/, '')
+    .replace(/^wwwroot\//i, '');
+
+  // Se o banco guarda apenas o nome do arquivo,
+  // considera que ele está na pasta uploads.
+  if (!caminho.includes('/')) {
+    caminho = `uploads/${caminho}`;
+  }
+
+  return `${API}/${caminho}`;
+}
+
+const urlFoto = montarUrlFoto(foto);
+
+const imagem = urlFoto
+  ? `<img
+       src="${escapeHtml(urlFoto)}"
+       alt="Foto de referência do bolo"
+       onerror="console.error('Erro ao carregar foto:', this.src); this.style.display='none';"
+     >`
+  : '';
 
         return `
                     <article class="kc-cart-item">

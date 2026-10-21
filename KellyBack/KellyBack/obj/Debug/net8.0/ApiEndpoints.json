@@ -151,6 +151,37 @@
   },
   {
     "ContainingType": "KellyBack.Controllers.PedidoController",
+    "Method": "AtualizarStatus",
+    "RelativePath": "Pedido/{id}/status",
+    "HttpMethod": "PATCH",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "request",
+        "Type": "KellyBack.DTOs.AtualizarStatusPedido",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "KellyBack.Controllers.PedidoController",
+    "Method": "ObterPedidosDaEquipe",
+    "RelativePath": "Pedido/equipe",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "KellyBack.Controllers.PedidoController",
     "Method": "FinalizarPedido",
     "RelativePath": "Pedido/finalizar",
     "HttpMethod": "POST",

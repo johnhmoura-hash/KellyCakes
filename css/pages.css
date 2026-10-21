@@ -461,6 +461,57 @@
     color: #70412b;
 }
 
+.kc-order-main {
+    flex: 1;
+    min-width: 0;
+}
+
+.kc-order-items-block {
+    max-width: 760px;
+    margin-top: 16px;
+    padding-top: 12px;
+    border-top: 1px solid #f0dce0;
+    color: #70412b;
+    font-size: 14px;
+}
+
+.kc-order-items-block ul {
+    display: grid;
+    gap: 8px;
+    margin: 9px 0;
+    padding: 0;
+    list-style: none;
+}
+
+.kc-order-items-block li,
+.kc-order-total {
+    display: flex;
+    justify-content: space-between;
+    gap: 16px;
+}
+
+.kc-order-items-block li span {
+    color: #96705e;
+}
+
+.kc-order-items-block li small {
+    display: block;
+    margin-top: 4px;
+    font-style: italic;
+}
+
+.kc-order-total {
+    margin: 10px 0 0;
+    padding-top: 10px;
+    border-top: 1px solid #f0dce0;
+    color: #b72e4a;
+}
+
+.kc-order-actions small {
+    color: #96705e;
+    font-size: 12px;
+}
+
 .kc-order-card p {
     margin: 5px 0;
     color: #96705e;

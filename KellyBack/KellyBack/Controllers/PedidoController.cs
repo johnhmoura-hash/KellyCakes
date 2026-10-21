@@ -1,6 +1,7 @@
 ﻿
 using KellyBack.Data;
 using KellyBack.Models;
+using KellyBack.DTOs;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System.Globalization;
@@ -274,6 +275,73 @@ namespace KellyBack.Controllers
             }).ToList();
 
             return Ok(resultado);
+        }
+
+        // Visão operacional da equipe: lista pedidos, cliente e composição.
+        [HttpGet("equipe")]
+        public async Task<IActionResult> ObterPedidosDaEquipe()
+        {
+            var pedidos = await _context.Pedidos
+                .Include(p => p.ItemPedidos)
+                    .ThenInclude(i => i.FkBoloIdBoloNavigation)
+                .OrderByDescending(p => p.DataPedido)
+                .ThenByDescending(p => p.IdPedido)
+                .ToListAsync();
+
+            var usuarios = await _context.Usuarios
+                .Where(u => pedidos.Select(p => p.FkUsuarioIdUsuario).Contains(u.IdUsuario))
+                .ToDictionaryAsync(u => u.IdUsuario);
+
+            return Ok(pedidos.Select(p =>
+            {
+                usuarios.TryGetValue(p.FkUsuarioIdUsuario ?? 0, out var usuario);
+                var itens = p.ItemPedidos.Select(item => new
+                {
+                    idBolo = item.FkBoloIdBolo,
+                    nome = "Bolo personalizado",
+                    quantidade = item.Quantidade,
+                    preco = item.PrecoUnitario,
+                    subtotal = item.PrecoUnitario * item.Quantidade,
+                    peso = item.FkBoloIdBoloNavigation?.Peso,
+                    tipoCobertura = item.FkBoloIdBoloNavigation?.TipoCobertura,
+                    decoracao = item.FkBoloIdBoloNavigation?.Decoracao,
+                    observacao = item.FkBoloIdBoloNavigation?.Observacao
+                }).ToList();
+
+                return new
+                {
+                    idPedido = p.IdPedido,
+                    status = p.StatusPedido ?? "Pendente",
+                    data = p.DataPedido,
+                    formaPagamento = p.FormaPagamento,
+                    total = itens.Sum(i => i.subtotal),
+                    cliente = usuario == null ? null : new
+                    {
+                        idUsuario = usuario.IdUsuario,
+                        nome = usuario.Nome,
+                        email = usuario.Email,
+                        telefone = usuario.Telefone,
+                        cpf = usuario.Cpf
+                    },
+                    itens
+                };
+            }));
+        }
+
+        [HttpPatch("{id:int}/status")]
+        public async Task<IActionResult> AtualizarStatus(int id, [FromBody] AtualizarStatusPedido request)
+        {
+            var statusPermitidos = new[] { "Pendente", "Em produção", "Pronto para retirada", "Finalizado", "Cancelado" };
+            if (request == null || !statusPermitidos.Contains(request.Status?.Trim(), StringComparer.OrdinalIgnoreCase))
+                return BadRequest(new { mensagem = "Status inválido." });
+
+            var pedido = await _context.Pedidos.FindAsync(id);
+            if (pedido == null)
+                return NotFound(new { mensagem = "Pedido não encontrado." });
+
+            pedido.StatusPedido = statusPermitidos.First(s => string.Equals(s, request.Status!.Trim(), StringComparison.OrdinalIgnoreCase));
+            await _context.SaveChangesAsync();
+            return Ok(new { idPedido = pedido.IdPedido, status = pedido.StatusPedido });
         }
 
         [HttpGet("ultimo")]

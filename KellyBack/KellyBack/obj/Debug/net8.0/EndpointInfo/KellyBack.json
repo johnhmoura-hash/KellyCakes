@@ -247,6 +247,60 @@
         }
       }
     },
+    "/Pedido/equipe": {
+      "get": {
+        "tags": [
+          "Pedido"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/Pedido/{id}/status": {
+      "patch": {
+        "tags": [
+          "Pedido"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AtualizarStatusPedido"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AtualizarStatusPedido"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/AtualizarStatusPedido"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/Pedido/ultimo": {
       "get": {
         "tags": [
@@ -404,6 +458,16 @@
   },
   "components": {
     "schemas": {
+      "AtualizarStatusPedido": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
       "Bolo": {
         "type": "object",
         "properties": {

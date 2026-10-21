@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("KellyBack")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+2ae900554242ace5c2f06d8254166717c1218e5c")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+df40dbaa2a1c1f97cdbcf433b0383f504877650c")]
 [assembly: System.Reflection.AssemblyProductAttribute("KellyBack")]
 [assembly: System.Reflection.AssemblyTitleAttribute("KellyBack")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
